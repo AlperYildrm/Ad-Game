@@ -52,20 +52,20 @@ export default function Page() {
       }}
     >
       <Draggable nodeRef={nodeRef}>
-        <Box
+        <div
           ref={nodeRef}
-          sx={{
+          style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            mt: 5,
+            marginTop: "2rem",
             position: "relative",
             zIndex: 2,
             width: "fit-content",
           }}
         >
           <HolidayAd />
-        </Box>
+        </div>
       </Draggable>
       <IconButton
         component={Link}

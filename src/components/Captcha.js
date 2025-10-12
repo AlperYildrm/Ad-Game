@@ -33,7 +33,6 @@ function Captcha() {
         borderRadius: 2,
         padding: 5,
         margin: 2,
-        width: 340,
         backgroundColor: "#fff",
         boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
         display: "flex",

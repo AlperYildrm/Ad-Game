@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { useNarrator } from "@/context/NarratorContext";
 import FeedTemplate from "@/components/FeedTemplate";
+import FeedNavBar from "@/components/FeedNavBar";
 
 export default function Page() {
   const { showNarratorSequence } = useNarrator();
@@ -24,7 +25,8 @@ export default function Page() {
   }, []);
 
   return isSpoken ? (
-    <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
+    <Box sx={{ justifyContent: "center", mt: 0 }}>
+      <FeedNavBar />
       <FeedTemplate />
     </Box>
   ) : null;

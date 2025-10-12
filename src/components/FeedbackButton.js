@@ -49,9 +49,9 @@ function FeedbackButton() {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "contain",
-        padding: 25,
-        width: 400,
-        height: 200,
+        padding: 36,
+        //width: 400,
+        //height: 200,
       }}
     >
       <Button
@@ -61,11 +61,11 @@ function FeedbackButton() {
         sx={{
           width: "30%",
           height: "30%",
-          fontSize: "0.8rem",
+          fontSize: "0.6rem",
           mb: 1,
         }}
       >
-        Feedback
+        Here
       </Button>
       <Modal
         open={open}

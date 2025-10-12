@@ -14,15 +14,14 @@ function HolidayAd() {
         display: "inline-block",
       }}
     >
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-        <Image
-          src={Holidayad}
-          alt="Ayran but dry"
-          width={400}
-          height={600}
-          style={{ borderRadius: "8px", cursor: "pointer" }}
-        />
-      </Link>
+      <Image
+        src={Holidayad}
+        alt="Ayran but dry"
+        width={400}
+        height={600}
+        style={{ borderRadius: "8px", cursor: "pointer" }}
+      />
+
       <InformationButton />
     </Box>
   );
