@@ -14,24 +14,10 @@ import {
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 
-export default function FeedComments() {
+export default function FeedComments({ comments }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [comments, setComments] = useState([
-    {
-      id: 1,
-      name: "Jane Doe",
-      text: "This is amazing! 😍",
-      date: "2h",
-    },
-    {
-      id: 2,
-      name: "John Smith",
-      text: "Nice work, keep it up 👏",
-      date: "1h",
-    },
-  ]);
 
   return (
     <Paper
