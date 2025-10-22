@@ -12,14 +12,21 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { Modal } from "@mui/material";
 import { useState } from "react";
+import MyphonePlusModal from "./MyphonePlusModal";
+import { useRouter } from "next/navigation";
 
-const pages = ["Ads", "MYPHONE+", "More Ads"];
+const pages = ["Ads", "MYPHONE+", "Less Ads"];
 const settings = ["Profile", "Account", "Settings", "Logout"];
 
 function FeedNavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const router = useRouter();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -34,6 +41,19 @@ function FeedNavBar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handlePageClick = (page) => {
+    handleCloseNavMenu();
+    if (page === "Ads") {
+      router.push("/ads");
+    }
+    if (page === "MYPHONE+") {
+      handleOpen();
+    }
+    if (page === "Less Ads") {
+      handleOpen();
+    }
   };
 
   return (
@@ -116,7 +136,7 @@ function FeedNavBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handlePageClick(page)}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
@@ -126,7 +146,7 @@ function FeedNavBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="You" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="You" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -152,6 +172,19 @@ function FeedNavBar() {
                   </Typography>
                 </MenuItem>
               ))}
+              <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <MyphonePlusModal />
+              </Modal>
             </Menu>
           </Box>
         </Toolbar>

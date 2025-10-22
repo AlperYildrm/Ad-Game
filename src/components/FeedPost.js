@@ -64,7 +64,7 @@ function FeedPost({ user }) {
             </IconButton>
           }
           title={user.postTitle}
-          subheader="September 14, 2016"
+          subheader={user.postDate}
         />
         <CardMedia
           component="img"
@@ -95,7 +95,7 @@ function FeedPost({ user }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <FeedComments comment={user.comments} />
+            <FeedComments comments={user.comments} />
           </CardContent>
         </Collapse>
       </Card>
