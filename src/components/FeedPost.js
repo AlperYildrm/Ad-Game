@@ -15,8 +15,9 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, Modal } from "@mui/material";
 import FeedComments from "./FeedComments";
+import MyphonePlusModal from "./MyphonePlusModal";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -44,6 +45,9 @@ const ExpandMore = styled((props) => {
 
 function FeedPost({ user }) {
   const [expanded, setExpanded] = useState(false);
+  const [openPlus, setOpenPlus] = useState(false);
+  const handleOpenPlus = () => setOpenPlus(true);
+  const HandleClosePlus = () => setOpenPlus(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -54,12 +58,12 @@ function FeedPost({ user }) {
       <Card sx={{ maxWidth: 500 }}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="User Avatar">
               {user.avatarLetter}
             </Avatar>
           }
           action={
-            <IconButton aria-label="settings">
+            <IconButton aria-label="settings" onClick={handleOpenPlus}>
               <MoreVertIcon />
             </IconButton>
           }
@@ -70,7 +74,7 @@ function FeedPost({ user }) {
           component="img"
           height="auto"
           image={user.postAd}
-          alt="Paella dish"
+          alt="Post Ad"
         />
         <CardContent>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
@@ -78,10 +82,10 @@ function FeedPost({ user }) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="like" onClick={handleOpenPlus}>
             <FavoriteIcon />
           </IconButton>
-          <IconButton aria-label="share">
+          <IconButton aria-label="share" onClick={handleOpenPlus}>
             <ShareIcon />
           </IconButton>
           <ExpandMore
@@ -99,6 +103,19 @@ function FeedPost({ user }) {
           </CardContent>
         </Collapse>
       </Card>
+      <Modal
+        open={openPlus}
+        onClose={HandleClosePlus}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <MyphonePlusModal />
+      </Modal>
     </Paper>
   );
 }

@@ -66,7 +66,7 @@ function MyphonePlusModal() {
             <ListItemIcon>
               <CheckCircleIcon color="primary" />
             </ListItemIcon>
-            <ListItemText primary="Hide unwanted posts" />
+            <ListItemText primary="Adjust unwanted posts" />
           </ListItem>
           <ListItem>
             <ListItemIcon>

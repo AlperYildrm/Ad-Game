@@ -1,3 +1,5 @@
+//This code is literal explaination of a spagetti code. If you try reading, good luck.
+
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,7 +17,11 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Modal } from "@mui/material";
 import { useState } from "react";
 import MyphonePlusModal from "./MyphonePlusModal";
+import SettingsModal from "./SettingsModal";
 import { useRouter } from "next/navigation";
+import AccountModal from "./AccountModal";
+import LogoutModal from "./LogoutModal";
+import ProfileModal from "./ProfileModal";
 
 const pages = ["Ads", "MYPHONE+", "Less Ads"];
 const settings = ["Profile", "Account", "Settings", "Logout"];
@@ -23,9 +29,21 @@ const settings = ["Profile", "Account", "Settings", "Logout"];
 function FeedNavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openPlus, setOpenPlus] = useState(false);
+  const handleOpenPlus = () => setOpenPlus(true);
+  const HandleClosePlus = () => setOpenPlus(false);
+  const [openProfile, setOpenProfile] = useState(false);
+  const handleOpenProfile = () => setOpenProfile(true);
+  const HandleCloseProfile = () => setOpenProfile(false);
+  const [openAccount, setOpenAccount] = useState(false);
+  const handleOpenAccount = () => setOpenAccount(true);
+  const HandleCloseAccount = () => setOpenAccount(false);
+  const [openSettings, setOpenSettings] = useState(false);
+  const handleOpenSettings = () => setOpenSettings(true);
+  const HandleCloseSettings = () => setOpenSettings(false);
+  const [openLogout, setOpenLogout] = useState(false);
+  const handleOpenLogout = () => setOpenLogout(true);
+  const HandleCloseLogout = () => setOpenLogout(false);
   const router = useRouter();
 
   const handleOpenNavMenu = (event) => {
@@ -49,10 +67,29 @@ function FeedNavBar() {
       router.push("/ads");
     }
     if (page === "MYPHONE+") {
-      handleOpen();
+      handleOpenPlus();
     }
     if (page === "Less Ads") {
-      handleOpen();
+      handleOpenPlus();
+    }
+  };
+  const handleUserClick = (page) => {
+    handleCloseUserMenu();
+    if (page === "Profile") {
+      //handleOpenProfile();
+      setOpenProfile(true);
+    }
+    if (page === "Account") {
+      //handleOpenAccount();
+      setOpenAccount(true);
+    }
+    if (page === "Settings") {
+      //handleOpenSettings();
+      setOpenSettings(true);
+    }
+    if (page === "Logout") {
+      //handleOpenLogout();
+      setOpenLogout(true);
     }
   };
 
@@ -167,25 +204,80 @@ function FeedNavBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: "center" }}>
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    onClick={() => handleUserClick(setting)}
+                  >
                     {setting}
                   </Typography>
                 </MenuItem>
               ))}
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <MyphonePlusModal />
-              </Modal>
             </Menu>
+            <Modal
+              open={openPlus}
+              onClose={HandleClosePlus}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <MyphonePlusModal />
+            </Modal>
+            <Modal
+              open={openProfile}
+              onClose={HandleCloseProfile}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <ProfileModal />
+            </Modal>
+            <Modal
+              open={openAccount}
+              onClose={HandleCloseAccount}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <AccountModal />
+            </Modal>
+            <Modal
+              open={openSettings}
+              onClose={HandleCloseSettings}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <SettingsModal />
+            </Modal>
+            <Modal
+              open={openLogout}
+              onClose={HandleCloseLogout}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <LogoutModal />
+            </Modal>
           </Box>
         </Toolbar>
       </Container>
