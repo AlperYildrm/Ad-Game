@@ -12,8 +12,26 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "", duration: 1000 },
-      { message: "Oh, a visitor!", duration: 2000 },
+      { message: "Bruh, did you really lick it?", duration: 3000 },
+      { message: "I got nothing to say...", duration: 2500 },
+      { message: "I respect you totally now.", duration: 3000 },
+      { message: "JUST KIDDING.", duration: 1500 },
+      {
+        message:
+          "I am only very disappointed because i couldn't take your photo",
+        duration: 5000,
+      },
+      {
+        message: "You are no diffirent than spoiled, useless random teenager.",
+        duration: 5000,
+      },
+      { message: "Yes... Yes that's it!", duration: 2500 },
+      {
+        message:
+          "I am making a Ad like a social media so that you can do doomscrollig.",
+        duration: 5500,
+      },
+      { message: "Here we go!", duration: 2000 },
     ];
 
     showNarratorSequence(messages);

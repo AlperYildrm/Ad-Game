@@ -40,7 +40,7 @@ function RulesModal() {
         </ListItem>
         <Divider component="li" />
         <ListItem>
-          <ListItemText primary="7- I forgot to add sixth rule." />
+          <ListItemText primary="7- I forgot adding sixth rule." />
         </ListItem>
       </List>
     </Paper>

@@ -15,11 +15,16 @@ function FeedTemplate() {
       comments: [
         {
           id: 1,
-          name: "Jane Doe",
-          text: "This is amazing! 😍",
-          date: "2h",
+          name: "Alex",
+          text: "This is the third time seeing this Ad.",
+          date: "5h",
         },
-        ,
+        {
+          id: 2,
+          name: "Ben",
+          text: "Exactly three of us are telling the truth.",
+          date: "12h",
+        },
       ],
     },
     {
@@ -31,12 +36,17 @@ function FeedTemplate() {
         "Do you like mustard? Of course you do! Who doesn't like mustard? Come get your big mustard now!",
       comments: [
         {
-          id: 1,
-          name: "Jane Doe",
-          text: "This is amazing! 😍",
-          date: "2h",
+          id: 3,
+          name: "Clara",
+          text: "I commented on this Ad before Emma did.",
+          date: "2w",
         },
-        ,
+        {
+          id: 4,
+          name: "Daniel",
+          text: "Ben is lying.",
+          date: "1m",
+        },
       ],
     },
     {
@@ -48,28 +58,38 @@ function FeedTemplate() {
         "Wow! Samsun created a whole new phone with more cameras. From now on you can take 3 pictures at the same time!",
       comments: [
         {
-          id: 1,
-          name: "Jane Doe",
-          text: "This is amazing! 😍",
-          date: "2h",
+          id: 5,
+          name: "Emma",
+          text: "Frank and Grace are both lying.",
+          date: "3h",
         },
-        ,
+        {
+          id: 6,
+          name: "Frank",
+          text: "Why people doesn't use MyPhone Plus? It's free btw.",
+          date: "8h",
+        },
       ],
     },
     {
       avatarLetter: "BAS",
       postTitle: "You and the Didi",
-      postDate: "31 February 2017",
+      postDate: "31 February 2025",
       postAd: "/images/didiad.png",
       postExplaination: "Didi baby oil. Only for you...",
       comments: [
         {
-          id: 1,
-          name: "Jane Doe",
-          text: "This is amazing! 😍",
-          date: "2h",
+          id: 7,
+          name: "Grace",
+          text: "There is a problem with this post",
+          date: "2y",
         },
-        ,
+        {
+          id: 8,
+          name: "Henry",
+          text: "Ivy is lying.",
+          date: "2w",
+        },
       ],
     },
     {
@@ -81,12 +101,23 @@ function FeedTemplate() {
         "Don't you get tired of eating good sheets? Just try out our dorm dishes and miss good dishes more!",
       comments: [
         {
-          id: 1,
-          name: "Jane Doe",
-          text: "This is amazing! 😍",
-          date: "2h",
+          id: 9,
+          name: "Ivy",
+          text: "I am the oldest commenter here.",
+          date: "1y",
         },
-        ,
+        {
+          id: 10,
+          name: "Julia",
+          text: "Frank is telling the truth.",
+          date: "5d",
+        },
+        {
+          id: 11,
+          name: "Kerem",
+          text: "Your password is 'ADG'.",
+          date: "35d but no 1m",
+        },
       ],
     },
   ];

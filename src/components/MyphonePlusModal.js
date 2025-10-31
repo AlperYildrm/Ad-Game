@@ -72,6 +72,12 @@ function MyphonePlusModal() {
             <ListItemIcon>
               <CheckCircleIcon color="primary" />
             </ListItemIcon>
+            <ListItemText primary="Edit your profile" />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <CheckCircleIcon color="primary" />
+            </ListItemIcon>
             <ListItemText primary="See fewer ads" />
           </ListItem>
           <ListItem>

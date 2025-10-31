@@ -76,19 +76,15 @@ function FeedNavBar() {
   const handleUserClick = (page) => {
     handleCloseUserMenu();
     if (page === "Profile") {
-      //handleOpenProfile();
       setOpenProfile(true);
     }
     if (page === "Account") {
-      //handleOpenAccount();
       setOpenAccount(true);
     }
     if (page === "Settings") {
-      //handleOpenSettings();
       setOpenSettings(true);
     }
     if (page === "Logout") {
-      //handleOpenLogout();
       setOpenLogout(true);
     }
   };
@@ -276,7 +272,7 @@ function FeedNavBar() {
                 alignItems: "center",
               }}
             >
-              <LogoutModal />
+              <LogoutModal HandleCloseLogout={HandleCloseLogout} />
             </Modal>
           </Box>
         </Toolbar>

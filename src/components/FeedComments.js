@@ -113,13 +113,21 @@ export default function FeedComments({ comments }) {
             >
               <Typography
                 variant="subtitle2"
-                sx={{ fontWeight: "bold", color: blueGrey[900] }}
+                sx={{
+                  fontWeight: "bold",
+                  color: blueGrey[900],
+                  textAlign: "left",
+                }}
               >
                 {comment.name}
               </Typography>
               <Typography
                 variant="body2"
-                sx={{ color: blueGrey[800], whiteSpace: "pre-wrap" }}
+                sx={{
+                  color: blueGrey[800],
+                  whiteSpace: "pre-wrap",
+                  textAlign: "left",
+                }}
               >
                 {comment.text}
               </Typography>
