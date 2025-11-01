@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Free Case",
+    "price": 0,
+    "image": "/images/case.png",
+    "about": "There is the only case you can open."
+  },
+  {
+    "id": 2,
+    "name": "Cheapest Case",
+    "price": 2.5,
+    "image": "/images/case.png",
+    "about": "The cheapest case like you."
+  },
+  {
+    "id": 3,
+    "name": "Cheap Case",
+    "price": 5,
+    "image": "/images/case.png",
+    "about": "This is more expensive than you"
+  },
+  {
+    "id": 4,
+    "name": "Classic Case",
+    "price": 10,
+    "image": "/images/casev2.png",
+    "about": "Finally worthy case to open!"
+  },
+  {
+    "id": 5,
+    "name": "Decent Case",
+    "price": 12.5,
+    "image": "/images/casev2.png",
+    "about": "Below this, you poor."
+  },
+  {
+    "id": 6,
+    "name": "Pro Case",
+    "price": 15,
+    "image": "/images/casev2.png",
+    "about": "Pro case for Professional pros."
+  },
+  {
+    "id": 7,
+    "name": "Premium Case",
+    "price": 20.0,
+    "image": "/images/casev3.png",
+    "about": "Lorem ipsum case premium."
+  },
+  {
+    "id": 8,
+    "name": "Elite Case",
+    "price": 25.0,
+    "image": "/images/casev3.png",
+    "about": "Elite..."
+  },
+  {
+    "id": 9,
+    "name": "Unaffordable Case",
+    "price": 100.0,
+    "image": "/images/casev3.png",
+    "about": "JK, you can afford with 100 bucks."
+  }
+]

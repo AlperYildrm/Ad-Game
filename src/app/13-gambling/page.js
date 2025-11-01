@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { useNarrator } from "@/context/NarratorContext";
-import BetAd from "@/ads/BetAd";
+import CaseNavBar from "@/components/CaseNavBar";
+import CaseTemplate from "@/components/CaseTemplate";
 
 export default function Page() {
   const { showNarratorSequence } = useNarrator();
@@ -24,8 +25,13 @@ export default function Page() {
   }, []);
 
   return isSpoken ? (
-    <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
-      <BetAd />
+    <Box>
+      <Box sx={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
+        <CaseNavBar />
+      </Box>
+      <Box sx={{ mt: 8, p: 2 }}>
+        <CaseTemplate />
+      </Box>
     </Box>
   ) : null;
 }
