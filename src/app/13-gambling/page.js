@@ -9,11 +9,15 @@ import CaseTemplate from "@/components/CaseTemplate";
 export default function Page() {
   const { showNarratorSequence } = useNarrator();
   const [isSpoken, setIsSpoken] = useState(false);
+  const balance = 0;
 
   useEffect(() => {
     const messages = [
-      { message: "", duration: 1000 },
-      { message: "Oh, a visitor!", duration: 1000 },
+      { message: "I...", duration: 1000 },
+      { message: "I just gave up.", duration: 2500 },
+      { message: "I am tired of speaking with you", duration: 3500 },
+      { message: "That's it, go and skip the Ad.", duration: 3000 },
+      { message: "At least if you can...", duration: 2500 },
     ];
 
     showNarratorSequence(messages);
@@ -27,10 +31,10 @@ export default function Page() {
   return isSpoken ? (
     <Box>
       <Box sx={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
-        <CaseNavBar />
+        <CaseNavBar balance={balance} />
       </Box>
       <Box sx={{ mt: 8, p: 2 }}>
-        <CaseTemplate />
+        <CaseTemplate balance={balance} />
       </Box>
     </Box>
   ) : null;

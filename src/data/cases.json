@@ -4,62 +4,344 @@
     "name": "Free Case",
     "price": 0,
     "image": "/images/case.png",
-    "about": "There is the only case you can open."
+    "about": "There is the only case you can open.",
+    "loots": [
+      {
+        "id": 10,
+        "name": "Uppertale",
+        "chance": 10,
+        "image": "/images/uppertale.png"
+      },
+      {
+        "id": 11,
+        "name": "Counter Stroke",
+        "chance": 10,
+        "image": "/images/CSGO.png"
+      },
+      {
+        "id": 12,
+        "name": "Brawl Clash",
+        "chance": 15,
+        "image": "/images/brawlclash.png"
+      },
+      {
+        "id": 13,
+        "name": "Battling Field 2042",
+        "chance": 5,
+        "image": "/images/bf2042.png"
+      },
+      {
+        "id": 14,
+        "name": "Gaylorant",
+        "chance": 20,
+        "image": "/images/gaylorant.png"
+      },
+      {
+        "id": 15,
+        "name": "Key to Close Ad",
+        "chance": 10,
+        "image": "/images/key.png"
+      },
+      {
+        "id": 16,
+        "name": "Ligue under Legends",
+        "chance": 5,
+        "image": "/images/lul.png"
+      },
+      {
+        "id": 17,
+        "name": "Plant of BattleGround",
+        "chance": 10,
+        "image": "/images/POBG.png"
+      },
+      {
+        "id": 18,
+        "name": "Stanlee Parable",
+        "chance": 5,
+        "image": "/images/stanleeparable.png"
+      },
+      {
+        "id": 19,
+        "name": "Stardew Mountains",
+        "chance": 10,
+        "image": "/images/stardew.png"
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Cheapest Case",
     "price": 2.5,
     "image": "/images/case.png",
-    "about": "The cheapest case like you."
+    "about": "The cheapest case like you.",
+    "loots": [
+      {
+        "id": 20,
+        "name": "Discard",
+        "chance": 20,
+        "image": "/images/uppertale.png"
+      },
+      {
+        "id": 11,
+        "name": "Whatsupp",
+        "chance": 25,
+        "image": "/images/CSGO.png"
+      },
+      {
+        "id": 12,
+        "name": "Key to Close Ad",
+        "chance": 10,
+        "image": "/images/brawlclash.png"
+      },
+      {
+        "id": 13,
+        "name": "Telgram",
+        "chance": 25,
+        "image": "/images/bf2042.png"
+      },
+      {
+        "id": 19,
+        "name": "NSM",
+        "chance": 30,
+        "image": "/images/stardew.png"
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Cheap Case",
     "price": 5,
     "image": "/images/case.png",
-    "about": "This is more expensive than you"
+    "about": "This is more expensive than you",
+    "loots": [
+      {
+        "id": 10,
+        "name": "Visual Scope",
+        "chance": 30,
+        "image": "/images/uppertale.png"
+      },
+      {
+        "id": 11,
+        "name": "Inteligge Opinion",
+        "chance": 30,
+        "image": "/images/CSGO.png"
+      },
+      {
+        "id": 12,
+        "name": "Key to Close Ad",
+        "chance": 10,
+        "image": "/images/CSGO.png"
+      },
+      {
+        "id": 15,
+        "name": "Abode Dreamweaving",
+        "chance": 30,
+        "image": "/images/key.png"
+      }
+    ]
   },
   {
     "id": 4,
     "name": "Classic Case",
     "price": 10,
     "image": "/images/casev2.png",
-    "about": "Finally worthy case to open!"
+    "about": "Finally worthy case to open!",
+    "loots": [
+      {
+        "id": 15,
+        "name": "Key to Close Ad",
+        "chance": 15,
+        "image": "/images/key.png"
+      },
+      {
+        "id": 11,
+        "name": "Yavacrpyt",
+        "chance": 15,
+        "image": "/images/lul.png"
+      },
+      {
+        "id": 10,
+        "name": "C--",
+        "chance": 20,
+        "image": "/images/key.png"
+      },
+      {
+        "id": 16,
+        "name": "Cobra",
+        "chance": 25,
+        "image": "/images/lul.png"
+      },
+      {
+        "id": 19,
+        "name": "C=",
+        "chance": 25,
+        "image": "/images/stardew.png"
+      }
+    ]
   },
   {
     "id": 5,
     "name": "Decent Case",
     "price": 12.5,
     "image": "/images/casev2.png",
-    "about": "Below this, you poor."
+    "about": "Below this, you poor.",
+    "loots": [
+      {
+        "id": 15,
+        "name": "Key to Close Ad",
+        "chance": 20,
+        "image": "/images/key.png"
+      },
+      {
+        "id": 16,
+        "name": "ChatGBT",
+        "chance": 20,
+        "image": "/images/lul.png"
+      },
+      {
+        "id": 19,
+        "name": "Geemini",
+        "chance": 20,
+        "image": "/images/stardew.png"
+      },
+      {
+        "id": 10,
+        "name": "Gruk",
+        "chance": 20,
+        "image": "/images/stardew.png"
+      },
+      {
+        "id": 11,
+        "name": "Dipsik",
+        "chance": 20,
+        "image": "/images/stardew.png"
+      }
+    ]
   },
   {
     "id": 6,
     "name": "Pro Case",
     "price": 15,
     "image": "/images/casev2.png",
-    "about": "Pro case for Professional pros."
+    "about": "Pro case for Professional pros.",
+    "loots": [
+      {
+        "id": 10,
+        "name": "Lightbulb",
+        "chance": 52,
+        "image": "/images/uppertale.png"
+      },
+      {
+        "id": 15,
+        "name": "Key to Close Ad",
+        "chance": 20,
+        "image": "/images/key.png"
+      },
+      {
+        "id": 16,
+        "name": "Six Arrow",
+        "chance": 18,
+        "image": "/images/lul.png"
+      },
+      {
+        "id": 19,
+        "name": "Three Crescent",
+        "chance": 5,
+        "image": "/images/stardew.png"
+      },
+      {
+        "id": 11,
+        "name": "Purple Tree",
+        "chance": 5,
+        "image": "/images/lul.png"
+      }
+    ]
   },
   {
     "id": 7,
     "name": "Premium Case",
     "price": 20.0,
     "image": "/images/casev3.png",
-    "about": "Lorem ipsum case premium."
+    "about": "Lorem ipsum case premium.",
+    "loots": [
+      {
+        "id": 10,
+        "name": "Key to Close Ad",
+        "chance": 25,
+        "image": "/images/uppertale.png"
+      },
+      {
+        "id": 11,
+        "name": "Galatapalace",
+        "chance": 45,
+        "image": "/images/CSGO.png"
+      },
+      {
+        "id": 12,
+        "name": "Torchgarden",
+        "chance": 25,
+        "image": "/images/brawlclash.png"
+      },
+      {
+        "id": 13,
+        "name": "Cradlestone",
+        "chance": 5,
+        "image": "/images/bf2042.png"
+      }
+    ]
   },
   {
     "id": 8,
     "name": "Elite Case",
     "price": 25.0,
     "image": "/images/casev3.png",
-    "about": "Elite..."
+    "about": "Elite...",
+    "loots": [
+      {
+        "id": 10,
+        "name": "Key to Close Ad",
+        "chance": 30,
+        "image": "/images/uppertale.png"
+      },
+      {
+        "id": 11,
+        "name": "Carla",
+        "chance": 40,
+        "image": "/images/CSGO.png"
+      },
+      {
+        "id": 12,
+        "name": "Samuel",
+        "chance": 15,
+        "image": "/images/brawlclash.png"
+      },
+      {
+        "id": 19,
+        "name": "Mencia",
+        "chance": 15,
+        "image": "/images/stardew.png"
+      }
+    ]
   },
   {
     "id": 9,
     "name": "Unaffordable Case",
     "price": 100.0,
     "image": "/images/casev3.png",
-    "about": "JK, you can afford with 100 bucks."
+    "about": "JK, you can afford with 100 bucks.",
+    "loots": [
+      {
+        "id": 12,
+        "name": "Key to Close Ad",
+        "chance": 50,
+        "image": "/images/brawlclash.png"
+      },
+      {
+        "id": 19,
+        "name": "Banana",
+        "chance": 50,
+        "image": "/images/stardew.png"
+      }
+    ]
   }
 ]

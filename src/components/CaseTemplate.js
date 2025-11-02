@@ -3,12 +3,12 @@ import React from "react";
 import CaseCard from "./CaseCard";
 import cases from "@/data/cases.json";
 
-function CaseTemplate() {
+function CaseTemplate(balance) {
   return (
     <Box>
       <Grid container spacing={3} justifyContent="center" sx={{ padding: 3 }}>
         {cases.map((caseData) => (
-          <CaseCard key={caseData.id} caseData={caseData} />
+          <CaseCard key={caseData.id} caseData={caseData} balance={balance} />
         ))}
       </Grid>
     </Box>

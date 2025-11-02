@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 
-function CaseNavBar() {
-  const money = 0.0;
+function CaseNavBar(balance) {
+  let money = balance.balance;
 
   return (
     <Paper
