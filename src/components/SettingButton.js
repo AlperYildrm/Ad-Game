@@ -20,6 +20,11 @@ function SettingButton() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        slotProps={{
+          backdrop: {
+            sx: { backgroundColor: "transparent" },
+          },
+        }}
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
         <SettingsModal />

@@ -1,17 +1,15 @@
 import { Paper, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 function SettingsSettings() {
+  const { t, i18n } = useTranslation();
   return (
-    <Paper elevation={3} sx={{ padding: 4, textAlign: "center" }}>
+    <Paper elevation={3} sx={{ padding: 9, textAlign: "center" }}>
       <Typography variant="h6" gutterBottom>
-        What kind of settings did you expect?
+        {t("settingssettings.header")}
       </Typography>
-      <Typography variant="body1">
-        It is just a game about ads, what are you looking for? I added a dark
-        mode switch because i hate bright white light. So yeah, that's it for
-        now. No more settings.
-      </Typography>
+      <Typography variant="body1">{t("settingssettings.paragraph")}</Typography>
     </Paper>
   );
 }

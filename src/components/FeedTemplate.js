@@ -16,7 +16,7 @@ function FeedTemplate() {
         {
           id: 1,
           name: "Alex",
-          text: "This is the third time seeing this Ad.",
+          text: "This is the first time seeing this Ad.",
           date: "5h",
         },
         {

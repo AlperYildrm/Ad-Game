@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "title": "Settings",
+    "speed_label": "Narrator's Line Duration",
+    "fast": "Fast",
+    "slow": "Slow",
+    "more_settings": "More Settings"
+  },
+  "settingssettings": {
+    "header": "What kind of settings did you expect?",
+    "paragraph": "It is literally just a game about ads. What else do you want, a settings empire?I added the narrator speed slider because our site tester was aging rapidly while waiting for the lines tofinish. Then I threw in a language selector because i simply can. But making these settings apply to the whole site? Yeah, no. I am way too lazy for that.So that's all you get. Enjoy!"
+  }
+}

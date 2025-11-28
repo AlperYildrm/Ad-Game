@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "title": "Ayarlar",
+    "speed_label": "Anlatıcının Repliklerinin Süresi",
+    "fast": "Hızlı",
+    "slow": "Yavaş",
+    "more_settings": "Daha Fazla Ayar"
+  },
+  "settingssettings": {
+    "header": "Başka nasıl bir ayar bekliyordun ki?",
+    "paragraph": "Burası dümdüz site reklamlarıyla alakalı bir oyun. Bir de istersen şuraya birkaç düğme koyayım, oynarsın? Anlatıcı hızını değiştiren ayar koydum çünkü sitenin testçisi anlatıcıyı dinlerken koltukta az daha uyuyordu. Dil seçim ayarından bahsedecek olursak, ekledim ama bir sor niye ekledim? Çünkü ekleyebiliyorum. Fakat bunu tüm siteye eklemek başka bir mevzu. Uğraşamam vallahi. İşte bu kadar, haydi sana iyi eğlenceler!"
+  }
+}

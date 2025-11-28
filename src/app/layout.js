@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NarratorProvider } from "../context/NarratorContext";
 import Narrator from "../components/Narrator";
+import "../i18n";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

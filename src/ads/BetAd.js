@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Box, IconButton, CircularProgress } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import betsite from "../../public/images/betsitead.png";
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import InformationButton from "@/components/InformationButton";
@@ -24,13 +25,15 @@ function BetAd() {
         display: "inline-block",
       }}
     >
-      <Image
-        src={betsite}
-        alt="Bet Ad"
-        width={400}
-        height={250}
-        style={{ borderRadius: "8px", cursor: "pointer" }}
-      />
+      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+        <Image
+          src={betsite}
+          alt="Bet Ad"
+          width={400}
+          height={250}
+          style={{ borderRadius: "8px", cursor: "pointer" }}
+        />
+      </Link>
 
       <IconButton
         onClick={handleClose}

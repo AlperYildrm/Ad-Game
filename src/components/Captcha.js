@@ -22,7 +22,7 @@ function Captcha() {
 
   const handleRedirect = () => {
     if (verified) {
-      router.push("/6-liar");
+      router.push("/6-look-down");
     }
   };
 

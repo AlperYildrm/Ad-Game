@@ -1,4 +1,5 @@
 //This code is literal explaination of a spagetti code. If you try reading, good luck.
+//I am the dev from future. I learnt that even this can be readible because i made more spagettier ones
 
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
@@ -18,10 +19,10 @@ import { Modal } from "@mui/material";
 import { useState } from "react";
 import MyphonePlusModal from "./MyphonePlusModal";
 import SettingsModal from "./SettingsModal";
-import { useRouter } from "next/navigation";
 import AccountModal from "./AccountModal";
 import LogoutModal from "./LogoutModal";
 import ProfileModal from "./ProfileModal";
+import AdsModal from "./AdsModal";
 
 const pages = ["Ads", "MYPHONE+", "Less Ads"];
 const settings = ["Profile", "Account", "Settings", "Logout"];
@@ -44,7 +45,9 @@ function FeedNavBar() {
   const [openLogout, setOpenLogout] = useState(false);
   const handleOpenLogout = () => setOpenLogout(true);
   const HandleCloseLogout = () => setOpenLogout(false);
-  const router = useRouter();
+  const [openAds, setOpenAds] = useState(false);
+  const handleOpenAds = () => setOpenAds(true);
+  const HandleCloseAds = () => setOpenAds(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -64,7 +67,7 @@ function FeedNavBar() {
   const handlePageClick = (page) => {
     handleCloseNavMenu();
     if (page === "Ads") {
-      router.push("/ads");
+      handleOpenAds();
     }
     if (page === "MYPHONE+") {
       handleOpenPlus();
@@ -273,6 +276,19 @@ function FeedNavBar() {
               }}
             >
               <LogoutModal HandleCloseLogout={HandleCloseLogout} />
+            </Modal>
+            <Modal
+              open={openAds}
+              onClose={HandleCloseAds}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <AdsModal />
             </Modal>
           </Box>
         </Toolbar>

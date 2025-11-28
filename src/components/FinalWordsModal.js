@@ -1,11 +1,14 @@
-import { Typography, Paper, Button } from "@mui/material";
+import { Typography, Paper, Button, Modal } from "@mui/material";
 import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
+import { useState } from "react";
+import LastFeedbackModal from "./LastFeedbackModal";
 
 function FinalWordsModal() {
+  const [open, setOpen] = useState(false);
   const style = {
     py: 0,
     width: "100%",
@@ -27,7 +30,7 @@ function FinalWordsModal() {
         </ListItem>
         <Divider component="li" />
         <ListItem>
-          <ListItemText primary="3- Actually the game still isn't finished. I will add 2nd ending to the game but firstly i have to finish this ending." />
+          <ListItemText primary="3- To be honest, the game still isn't finished. I will add 2nd ending to the game but firstly i have to finish this ending." />
         </ListItem>
         <Divider component="li" />
         <ListItem>
@@ -35,22 +38,26 @@ function FinalWordsModal() {
         </ListItem>
         <Divider component="li" />
         <ListItem>
-          <ListItemText primary="5- I admit that I used AI so much to make dummy applications look like real ones. Oh, also correcting errors and features i don't know. So yes, i used them very well." />
+          <ListItemText primary="5- This projects true purpose is gaining experience and getting used to developing react.Of course i still have a long way to go but at least i have learned a lot about React's builds, components etc. " />
         </ListItem>
         <Divider component="li" />
         <ListItem>
-          <ListItemText
-            primary="7- I would love to read your feedbacks but!..
-      
-        Unfortunately, this game was developed with only react and for this
-        reason all game you played was just pure front-end.
-      
-        Therefore, There is no back-end, server, to get and store feedbacks."
-          />
+          <ListItemText primary="7- I admit that I used AI so much to make dummy applications look like real ones. Oh, also correcting errors and handling features i don't know. So yes, i used them very well." />
         </ListItem>
         <Divider component="li" />
         <ListItem>
           <ListItemText primary="8- I hope you enjoyed well. Please don't be angry with me because of the tiny miny little 'jokes'. It's narrator's fault. Yes,shame on him!" />
+        </ListItem>
+        <Divider component="li" />
+        <ListItem sx={{ alignItems: "center", justifyContent: "center" }}>
+          <Button
+            variant="contained"
+            color="error"
+            sx={{ m: 1 }}
+            onClick={() => setOpen(true)}
+          >
+            Give Me Feedback
+          </Button>
         </ListItem>
         <Divider component="li" />
         <ListItem sx={{ alignItems: "center", justifyContent: "center" }}>
@@ -61,6 +68,15 @@ function FinalWordsModal() {
           </a>
         </ListItem>
       </List>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        <LastFeedbackModal />
+      </Modal>
     </Paper>
   );
 }

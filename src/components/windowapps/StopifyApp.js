@@ -32,32 +32,30 @@ import {
   AccessTime,
   DownloadForOffline,
 } from "@mui/icons-material";
+import soviet from "../../../public/images/soviet.jpg";
 
 const StopifyApp = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(70);
   const [progress, setProgress] = useState(30);
 
-  // --- AUDIO LOGIC SETUP ---
-  // 1. Create a ref to hold the audio object so it persists between renders
-  // const audioRef = useRef(new Audio("/music/your_song_file.mp3"));
+  //masterpiece song
+  const audioRef = useRef(new Audio("/sounds/sscb.mp3"));
 
-  // 2. Handle Play/Pause
   const togglePlay = () => {
-    // if (isPlaying) {
-    //   audioRef.current.pause();
-    // } else {
-    //   audioRef.current.play();
-    // }
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
     setIsPlaying(!isPlaying);
   };
 
-  // 3. Handle Volume Changes
-  // useEffect(() => {
-  //   if(audioRef.current) {
-  //     audioRef.current.volume = volume / 100;
-  //   }
-  // }, [volume]);
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume / 100;
+    }
+  }, [volume]);
 
   const colors = {
     bg: "#121212",
@@ -71,33 +69,31 @@ const StopifyApp = () => {
   };
 
   const playlists = [
-    "Daily Mix 1",
-    "Discover Weekly",
-    "Top Hits 2024",
-    "Coding Focus",
-    "Lo-Fi Beats",
-    "Gym Hype",
+    "Daily Mix 1 ",
+    "Discover Weekly ",
+    "Top Hits 2024 ",
+    "Coding Focus ",
+    "Lo-Fi Beats ",
+    "Gym Hype ",
   ];
 
   const songs = [
     {
       id: 1,
-      title: "Blinding Lights",
-      artist: "The Weeknd",
-      album: "After Hours",
-      duration: "3:20",
+      title: "Soviet Anthem",
+      artist: "Lenin ft. Alper",
+      album: "Our Songs",
+      duration: "3:24",
       img: "",
-      // --- ADD MUSIC FILE HERE ---
-      // url: "/music/blinding_lights.mp3"
+      url: "/sounds/sscb.mp3",
     },
     {
       id: 2,
-      title: "Shape of You",
-      artist: "Ed Sheeran",
-      album: "Divide",
+      title: "Shape on You",
+      artist: "Ad Sheer",
+      album: "Division",
       duration: "3:53",
       img: "",
-      // url: "/music/shape_of_you.mp3"
     },
     {
       id: 3,
@@ -106,25 +102,22 @@ const StopifyApp = () => {
       album: "Future Nostalgia",
       duration: "3:23",
       img: "",
-      // url: "/music/levitating.mp3"
     },
     {
       id: 4,
-      title: "Stay",
-      artist: "Kid LAROI & Justin Bieber",
-      album: "F*CK LOVE 3",
-      duration: "2:21",
+      title: "Never Gonna Give Me up",
+      artist: "Risk Astley",
+      album: "Riskroll",
+      duration: "3:34",
       img: "",
-      // url: "/music/stay.mp3"
     },
     {
       id: 5,
-      title: "Heat Waves",
-      artist: "Glass Animals",
-      album: "Dreamland",
+      title: "Meat Waves",
+      artist: "Sand Animals",
+      album: "Dreamurando",
       duration: "3:58",
       img: "",
-      // url: "/music/heat_waves.mp3"
     },
   ];
 
@@ -344,7 +337,7 @@ const StopifyApp = () => {
                 Install App
               </Button>
               <Avatar sx={{ width: 32, height: 32, bgcolor: "#535353" }}>
-                U
+                L
               </Avatar>
             </Box>
           </Box>
@@ -448,7 +441,7 @@ const StopifyApp = () => {
                     overflow: "hidden",
                   }}
                 >
-                  The Weeknd, Dua Lipa, Ed Sheeran and more
+                  The Weekmid, El-Aminem, Ad Sheer and more
                 </Typography>
               </Paper>
             ))}
@@ -585,10 +578,10 @@ const StopifyApp = () => {
               variant="subtitle2"
               sx={{ color: "white", fontWeight: "bold" }}
             >
-              Blinding Lights
+              Soviet Anthem
             </Typography>
             <Typography variant="caption" sx={{ color: colors.textSec }}>
-              The Weeknd
+              Lenin ft. Alper
             </Typography>
           </Box>
           <IconButton size="small" sx={{ color: colors.accent }}>

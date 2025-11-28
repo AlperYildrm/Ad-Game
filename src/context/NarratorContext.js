@@ -16,6 +16,8 @@ export const NarratorProvider = ({ children }) => {
   const [text, setText] = useState("");
   const [visible, setVisible] = useState(false);
 
+  const [durationScale, setDurationScale] = useState(1.0);
+
   const timersRef = useRef([]);
   const seqTokenRef = useRef(0);
 
@@ -38,10 +40,13 @@ export const NarratorProvider = ({ children }) => {
       stopNarrator();
       setText(message);
       setVisible(true);
-      const hideId = setTimeout(() => setVisible(false), duration);
+
+      const effectiveDuration = duration * durationScale;
+
+      const hideId = setTimeout(() => setVisible(false), effectiveDuration);
       timersRef.current.push(hideId);
     },
-    [stopNarrator]
+    [stopNarrator, durationScale]
   );
 
   const showNarratorSequence = useCallback(
@@ -51,6 +56,9 @@ export const NarratorProvider = ({ children }) => {
 
       let delay = 0;
       messages.forEach(({ message, duration }) => {
+        const effectiveDuration = duration * durationScale;
+        const effectiveGap = gap * durationScale;
+
         const showId = setTimeout(() => {
           if (seqTokenRef.current !== myToken) return;
 
@@ -60,16 +68,16 @@ export const NarratorProvider = ({ children }) => {
           const hideId = setTimeout(() => {
             if (seqTokenRef.current !== myToken) return;
             setVisible(false);
-          }, duration);
+          }, effectiveDuration);
 
           timersRef.current.push(hideId);
         }, delay);
 
         timersRef.current.push(showId);
-        delay += duration + gap;
+        delay += effectiveDuration + effectiveGap;
       });
     },
-    [stopNarrator]
+    [stopNarrator, durationScale]
   );
 
   useEffect(() => {
@@ -84,6 +92,8 @@ export const NarratorProvider = ({ children }) => {
         showNarrator,
         showNarratorSequence,
         stopNarrator,
+        durationScale,
+        setDurationScale,
       }}
     >
       {children}
