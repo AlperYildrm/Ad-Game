@@ -20,12 +20,7 @@ export default function Page() {
       { message: "At least if you can...", duration: 2500 },
     ];
 
-    showNarratorSequence(messages);
-
-    const totalTime = messages.reduce((acc, m) => acc + m.duration + 500, 0);
-    const timer = setTimeout(() => setIsSpoken(true), totalTime);
-
-    return () => clearTimeout(timer);
+    showNarratorSequence(messages, 500, () => setIsSpoken(true));
   }, []);
 
   return isSpoken ? (

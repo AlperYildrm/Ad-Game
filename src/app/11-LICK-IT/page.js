@@ -26,26 +26,21 @@ export default function Page() {
       },
       { message: "I am explaining you now...", duration: 3000 },
       {
-        message: "If you want to pass this level, you have to lick the device",
+        message: "If you want to close the Ad, you have to lick the device",
         duration: 5000,
       },
       { message: "AHAHAHAHAHAHAAHAH", duration: 1500 },
       { message: "What are you going to do huh!?", duration: 3000 },
       {
         message:
-          "Will you lick the device and throw out your honour and selfrespect for a mere level?",
+          "Will you lick the device and throw out your honour and selfrespect for a mere Ad?",
         duration: 5500,
       },
       { message: "Lick it!, lick it!, lick it!", duration: 2000 },
       { message: "I want to see you licking it!!!", duration: 3000 },
     ];
 
-    showNarratorSequence(messages);
-
-    const totalTime = messages.reduce((acc, m) => acc + m.duration + 500, 0);
-    const timer = setTimeout(() => setIsSpoken(true), totalTime);
-
-    return () => clearTimeout(timer);
+    showNarratorSequence(messages, 500, () => setIsSpoken(true));
   }, []);
 
   return isSpoken ? (

@@ -275,7 +275,7 @@ function Ending() {
           height: "100vh",
           bgcolor: "#0000AA",
           color: "white",
-          p: 4,
+          p: 0,
           fontFamily: "monospace",
         }}
       >
@@ -290,7 +290,7 @@ function Ending() {
 
   return (
     <Box
-      sx={{ position: "relative", overflow: "hidden", p: 4, minHeight: "80vh" }}
+      sx={{ position: "relative", overflow: "hidden", p: 0, minHeight: "80vh" }}
     >
       <GlobalStyles
         styles={{
@@ -311,7 +311,7 @@ function Ending() {
             pointerEvents: "none",
             color: "red",
             fontFamily: "monospace",
-            p: 2,
+            p: 0,
             zIndex: 0,
           }}
         >
@@ -324,7 +324,7 @@ function Ending() {
       <Paper
         elevation={chaosLevel > 5 ? 0 : 3}
         sx={{
-          padding: 4,
+          padding: 0,
           textAlign: "justify",
           backgroundColor: chaosLevel > 7 ? "transparent" : "background.paper",
           color: chaosLevel > 6 ? "red" : "text.primary",

@@ -18,12 +18,7 @@ function BetAd() {
   useEffect(() => {
     const messages = [{ message: "Ops, not this...", duration: 1000 }];
 
-    showNarratorSequence(messages);
-
-    const totalTime = messages.reduce((acc, m) => acc + m.duration - 250, 0);
-    const timer = setTimeout(() => setAdImage(Sau), totalTime);
-
-    return () => clearTimeout(timer);
+    showNarratorSequence(messages, 500, () => setAdImage(Sau));
   }, []);
 
   if (!isShown) return null;

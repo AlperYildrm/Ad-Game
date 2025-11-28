@@ -50,11 +50,12 @@ export const NarratorProvider = ({ children }) => {
   );
 
   const showNarratorSequence = useCallback(
-    (messages, gap = 500) => {
+    (messages, gap = 500, onComplete = null) => {
       stopNarrator();
       const myToken = ++seqTokenRef.current;
 
       let delay = 0;
+
       messages.forEach(({ message, duration }) => {
         const effectiveDuration = duration * durationScale;
         const effectiveGap = gap * durationScale;
@@ -74,8 +75,18 @@ export const NarratorProvider = ({ children }) => {
         }, delay);
 
         timersRef.current.push(showId);
+
         delay += effectiveDuration + effectiveGap;
       });
+
+      if (onComplete) {
+        const finishId = setTimeout(() => {
+          if (seqTokenRef.current !== myToken) return;
+          onComplete();
+        }, delay);
+
+        timersRef.current.push(finishId);
+      }
     },
     [stopNarrator, durationScale]
   );

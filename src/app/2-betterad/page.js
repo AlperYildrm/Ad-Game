@@ -30,12 +30,7 @@ export default function Page() {
       { message: "Ah, here it is!", duration: 2000 },
     ];
 
-    showNarratorSequence(messages);
-
-    const totalTime = messages.reduce((acc, m) => acc + m.duration + 500, 0);
-    const timer = setTimeout(() => setIsSpoken(true), totalTime);
-
-    return () => clearTimeout(timer);
+    showNarratorSequence(messages, 500, () => setIsSpoken(true));
   }, []);
 
   return isSpoken ? (

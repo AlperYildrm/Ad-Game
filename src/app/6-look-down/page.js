@@ -31,19 +31,14 @@ export default function Page() {
       { message: "The more i think, the more i get angry!", duration: 3000 },
       {
         message:
-          "Okey, let's have a deal! From that very moment i stop showing my precious Ads...",
+          "Okay, let's have a deal! From that very moment i stop showing my precious Ads...",
         duration: 6000,
       },
       { message: "And you can...", duration: 2000 },
       { message: "Go all way DOWN to hell!", duration: 3000 },
     ];
 
-    showNarratorSequence(messages);
-
-    const totalTime = messages.reduce((acc, m) => acc + m.duration + 500, 0);
-    const timer = setTimeout(() => setIsSpoken(true), totalTime);
-
-    return () => clearTimeout(timer);
+    showNarratorSequence(messages, 500, () => setIsSpoken(true));
   }, []);
 
   return isSpoken ? (
