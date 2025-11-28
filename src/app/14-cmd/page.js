@@ -3,17 +3,14 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { useNarrator } from "@/context/NarratorContext";
-import BetAd from "@/ads/BetAd";
+import WindowAd from "@/ads/WindowAd";
 
 export default function Page() {
   const { showNarratorSequence } = useNarrator();
   const [isSpoken, setIsSpoken] = useState(false);
 
   useEffect(() => {
-    const messages = [
-      { message: "", duration: 1000 },
-      { message: "Oh, a visitor!", duration: 2000 },
-    ];
+    const messages = [{ message: "I am speechless...", duration: 2000 }];
 
     showNarratorSequence(messages);
 
@@ -25,7 +22,7 @@ export default function Page() {
 
   return isSpoken ? (
     <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
-      <BetAd />
+      <WindowAd />
     </Box>
   ) : null;
 }
