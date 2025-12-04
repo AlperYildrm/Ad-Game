@@ -26,7 +26,7 @@ function NutzillaAd() {
       {!infoClicked ? (
         <>
           <Link
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            href="https://www.youtube.com/watch?v=8Pc0AEbfnBM"
             target="_blank"
           >
             <Image

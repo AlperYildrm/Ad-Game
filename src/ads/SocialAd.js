@@ -44,7 +44,7 @@ export default function SocialAd() {
 
   return (
     <Box sx={{ position: "relative", display: "inline-block" }}>
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <Link href="https://www.youtube.com/watch?v=ZZ5LpwO-An4" target="_blank">
         <Image
           src={xAdImg}
           alt="Twitre"

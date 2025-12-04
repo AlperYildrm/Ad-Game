@@ -14,7 +14,7 @@ function Yad() {
         display: "inline-block",
       }}
     >
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <Link href="https://www.youtube.com/watch?v=CBEvfZu4HE4" target="_blank">
         <Image
           src={Cheesead}
           alt="Ayran but dry"

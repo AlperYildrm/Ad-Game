@@ -350,7 +350,7 @@ const CreditScene = ({ onComplete }) => {
             </IconButton>
             <IconButton sx={{ color: "#29b6f6" }}>
               <a
-                href="https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1"
+                href="https://www.youtube.com/watch?v=qthxa7m_B4E"
                 target="_blank"
               >
                 <Twitter />

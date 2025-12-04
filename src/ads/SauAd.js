@@ -25,7 +25,7 @@ function BetAd() {
 
   return (
     <Box sx={{ position: "relative", display: "inline-block" }}>
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <Link href="https://www.youtube.com/watch?v=4KHbvrsdpw4" target="_blank">
         <Image
           src={adImage}
           alt="Sau Ad"

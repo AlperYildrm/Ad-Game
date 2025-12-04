@@ -27,7 +27,7 @@ function LickitAd() {
         display: "inline-block",
       }}
     >
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <Link href="https://www.youtube.com/watch?v=OgZzUJud3Q4" target="_blank">
         <Image
           src={LickIt}
           alt="Lickkk IT!"

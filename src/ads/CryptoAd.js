@@ -15,7 +15,7 @@ function CryptoAd() {
         display: "inline-block",
       }}
     >
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <Link href="https://www.youtube.com/watch?v=cIwRQwAS_YY" target="_blank">
         <Image
           src={Cryptoad}
           alt="coin"

@@ -14,7 +14,7 @@ function CyberAd() {
         display: "inline-block",
       }}
     >
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+      <Link href="https://www.youtube.com/watch?v=qIAKrF_PhuI" target="_blank">
         <Image
           src={Cyberad}
           alt="Cyber Ad"
