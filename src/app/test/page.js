@@ -1,9 +1,24 @@
 "use client";
 import React from "react";
-import Ending from "@/components/Ending";
+import DownloadSettingsModal2 from "@/components/DownloadSettingsModal2";
+
+import { useSound } from "@/context/SoundContext";
+import { Button, Box } from "@mui/material";
 
 function page() {
-  return <Ending />;
+  const { playSound } = useSound();
+
+  return (
+    <Box>
+      <Button
+        variant="contained"
+        onClick={() => playSound("spin")}
+        sx={{ m: 2 }}
+      >
+        Test Sound (Spin)
+      </Button>
+    </Box>
+  );
 }
 
 export default page;

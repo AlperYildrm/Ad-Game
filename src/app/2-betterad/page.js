@@ -21,7 +21,7 @@ export default function Page() {
         message: "Of course i should not have shown a mere bet site Ad",
         duration: 3500,
       },
-      { message: "TO MY PRECIOUS DEAR VISITOR", duration: 3000 },
+      { message: "TO MY PRECIOUS DEAR VISITOR", duration: 3000, type: "angry" },
       {
         message: "Wait a minute please, i will fix it right now!",
         duration: 2500,

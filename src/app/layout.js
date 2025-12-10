@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NarratorProvider } from "../context/NarratorContext";
+import { SoundProvider } from "../context/SoundContext";
 import Narrator from "../components/Narrator";
 import "../i18n";
 
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NarratorProvider>
-          {children}
-          <Narrator />
-        </NarratorProvider>
+        <SoundProvider>
+          <NarratorProvider>
+            {children}
+            <Narrator />
+          </NarratorProvider>
+        </SoundProvider>
       </body>
     </html>
   );

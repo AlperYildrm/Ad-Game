@@ -18,11 +18,13 @@ function DownloadSettingsModal3({ handleResetting }) {
         message:
           "And so the narrator had assigned it an extra secret pin number",
         duration: 5000,
+        type: "stanley",
       },
-      { message: "2 4 8 5", duration: 4000 },
+      { message: "2 4 8 5", duration: 4000, type: "stanley" },
       {
         message: "But of course user couldn't possibly have know this",
         duration: 3000,
+        type: "stanley",
       },
     ];
 

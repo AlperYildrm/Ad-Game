@@ -15,6 +15,7 @@ const NarratorContext = createContext(null);
 export const NarratorProvider = ({ children }) => {
   const [text, setText] = useState("");
   const [visible, setVisible] = useState(false);
+  const [type, setType] = useState("default");
 
   const [durationScale, setDurationScale] = useState(1.0);
 
@@ -32,13 +33,15 @@ export const NarratorProvider = ({ children }) => {
     clearAllTimers();
     setVisible(false);
     setText("");
+    setType("default");
     seqTokenRef.current += 1;
   }, [clearAllTimers]);
 
   const showNarrator = useCallback(
-    (message, duration = 4000) => {
+    (message, duration = 4000, type = "default") => {
       stopNarrator();
       setText(message);
+      setType(type);
       setVisible(true);
 
       const effectiveDuration = duration * durationScale;
@@ -56,7 +59,7 @@ export const NarratorProvider = ({ children }) => {
 
       let delay = 0;
 
-      messages.forEach(({ message, duration }) => {
+      messages.forEach(({ message, duration, type = "default" }) => {
         const effectiveDuration = duration * durationScale;
         const effectiveGap = gap * durationScale;
 
@@ -64,6 +67,7 @@ export const NarratorProvider = ({ children }) => {
           if (seqTokenRef.current !== myToken) return;
 
           setText(message);
+          setType(type);
           setVisible(true);
 
           const hideId = setTimeout(() => {
@@ -100,6 +104,7 @@ export const NarratorProvider = ({ children }) => {
       value={{
         text,
         visible,
+        type,
         showNarrator,
         showNarratorSequence,
         stopNarrator,

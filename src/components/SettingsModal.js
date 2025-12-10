@@ -75,6 +75,19 @@ function SettingsModal() {
         </ButtonGroup>
       </Box>
 
+      <Button
+        variant="text"
+        color="primary"
+        size="small"
+        sx={{ mt: 2 }}
+        onClick={handleOpen}
+      >
+        {t("settings.more_settings")}
+      </Button>
+
+      <br />
+      <br />
+
       <Box sx={{ mb: 2 }}>
         <Typography id="narrator-speed-slider" gutterBottom variant="caption">
           {t("settings.speed_label")} ({durationScale}x)
@@ -92,19 +105,6 @@ function SettingsModal() {
           <Typography variant="caption">{t("settings.slow")}</Typography>
         </Stack>
       </Box>
-
-      <br />
-
-      <Button
-        variant="text"
-        color="primary"
-        size="small"
-        sx={{ mt: 2 }}
-        onClick={handleOpen}
-      >
-        {t("settings.more_settings")}
-      </Button>
-
       <Modal
         open={open}
         onClose={handleClose}

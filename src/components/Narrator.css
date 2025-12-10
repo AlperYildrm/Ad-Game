@@ -1,15 +1,76 @@
 .narrator-box {
   position: fixed;
-  bottom: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  font-size: 18px;
-  max-width: 70%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.05) inset;
+
+  color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
   text-align: center;
-  transition: opacity 0.5s;
-  z-index: 1000;
+
+  max-width: 450px;
+  width: 90%;
+
+  opacity: 0;
+  animation: narratorPopIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  z-index: 10000;
+}
+
+@keyframes narratorPopIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.narrator-box.angry {
+  background: rgba(112, 0, 0, 0.9);
+  border-color: rgba(255, 50, 50, 0.4);
+  color: #ffeaea;
+  box-shadow: 0 10px 40px -10px rgba(255, 0, 0, 0.3),
+    0 0 30px rgba(255, 0, 0, 0.1) inset;
+  animation: narratorPopIn 0.4s ease-out forwards, angryShake 0.5s ease-in-out;
+}
+
+@keyframes angryShake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(calc(-50% - 4px), -50%);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(calc(-50% + 4px), -50%);
+  }
+}
+.narrator-box.stanley {
+  top: 90%;
+  background: rgba(10, 10, 10, 0.4);
+  color: #ffffff5e;
 }
