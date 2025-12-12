@@ -11,7 +11,11 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "OOO! You are not that fool huh!", duration: 3500 },
+      {
+        message: "OOO! You are not that fool huh!",
+        duration: 3500,
+        type: "discovery",
+      },
       { message: "Fine!", duration: 1500 },
       { message: "This is a war declaration from me to you!", duration: 5000 },
       { message: "I have infinitely many Ads in my pocket!", duration: 4000 },

@@ -11,7 +11,7 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Again, you closed the Ad!", duration: 3000 },
+      { message: "Again, you closed the Ad!", duration: 3000, type: "angry" },
       { message: "Why?", duration: 2000 },
       { message: "Why? Was it boring?", duration: 2500 },
       { message: "What did you expect? It is an Ad!", duration: 3000 },

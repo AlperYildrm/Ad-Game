@@ -12,8 +12,8 @@ export default function Page() {
   useEffect(() => {
     const messages = [
       { message: "", duration: 1000 },
-      { message: "Oh, a visitor!", duration: 2000 },
-      { message: "Welcome my dear visitor.", duration: 3000 },
+      { message: "Oh, a visitor!", duration: 2000, type: "discovery" },
+      { message: "Welcome my dear visitor.", duration: 3000, type: "happy" },
       { message: "Thank you for choosing viewing our Ads.", duration: 4000 },
       {
         message: "Thanks to you, I can make my clients happy.",
@@ -21,7 +21,7 @@ export default function Page() {
       },
       { message: "If you want to support me more", duration: 3000 },
       { message: "You can click on the Ads...", duration: 3000 },
-      { message: "Again, Thank you!", duration: 2000 },
+      { message: "Again, Thank you!", duration: 2000, type: "happy" },
     ];
 
     showNarratorSequence(messages, 500, () => setIsSpoken(true));

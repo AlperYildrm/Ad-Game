@@ -11,7 +11,7 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Oh... Thanks god!", duration: 3000 },
+      { message: "Oh... Thanks god!", duration: 3000, type: "happy" },
       { message: "My Ads were not problematic after all.", duration: 4000 },
       {
         message:

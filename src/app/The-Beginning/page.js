@@ -11,11 +11,15 @@ function page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Oh,huh!", duration: 1000 },
-      { message: "A visitor! Yeyy!", duration: 2000 },
-      { message: "Ahem- Ahem...", duration: 2000 },
-      { message: "Welcome to my site dear visitor.", duration: 3000 },
-      { message: "You are my first visitor.", duration: 3000 },
+      { message: "Oh,huh!", duration: 1000, type: "discovery" },
+      { message: "A visitor! Yeyy!", duration: 2000, type: "happy" },
+      { message: "Ahem- Ahem...", duration: 2000, type: "discovery" },
+      {
+        message: "Welcome to my site dear visitor.",
+        duration: 3000,
+        type: "happy",
+      },
+      { message: "You are my first visitor.", duration: 3000, type: "happy" },
       {
         message:
           "I may lack experience but i guarantee that you will get the best experience!",
@@ -26,7 +30,7 @@ function page() {
           "Because my site has no Ads! Yes, unlike other site there is no Ads.",
         duration: 4000,
       },
-      { message: "I hope you will enjoy!", duration: 3000 },
+      { message: "I hope you will enjoy!", duration: 3000, type: "happy" },
     ];
 
     showNarratorSequence(messages, 500, () => setIsSpoken(true));

@@ -15,7 +15,7 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Ha?", duration: 1000 },
+      { message: "Ha?", duration: 1000, type: "discovery" },
       { message: "Literally, whose idea was this?", duration: 3000 },
       {
         message:

@@ -32,7 +32,6 @@ import {
   AccessTime,
   DownloadForOffline,
 } from "@mui/icons-material";
-import soviet from "../../../public/images/soviet.jpg";
 
 const StopifyApp = () => {
   const [isPlaying, setIsPlaying] = useState(false);

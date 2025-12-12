@@ -11,7 +11,7 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Okey, okey...", duration: 2000 },
+      { message: "Okey, okey...", duration: 2000, type: "discovery" },
       { message: "You got me.", duration: 2000 },
       {
         message: "I admit, i cannot really close the close button.",
@@ -44,6 +44,7 @@ export default function Page() {
         message:
           "Anyway i talked so much. I am really can't wait watching your suffer eheheheh.",
         duration: 5000,
+        type: "happy",
       },
     ];
 

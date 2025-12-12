@@ -74,3 +74,45 @@
   background: rgba(10, 10, 10, 0.4);
   color: #ffffff5e;
 }
+
+.narrator-box.happy {
+  background: rgb(85, 173, 13);
+
+  border-color: rgba(255, 215, 0, 0.5);
+  color: #fffcf0;
+
+  box-shadow: 0 15px 50px -10px rgba(255, 200, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.15) inset;
+}
+
+.narrator-box.discovery {
+  background: rgba(5, 40, 50, 0.9);
+
+  border-color: rgba(0, 255, 240, 0.6);
+
+  color: #e0faff;
+
+  box-shadow: 0 10px 50px -10px rgba(0, 255, 255, 0.3),
+    0 0 30px rgba(0, 255, 255, 0.1) inset;
+
+  animation: narratorPopIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+    discoveryFlash 1.5s ease-out infinite;
+}
+
+@keyframes discoveryFlash {
+  0% {
+    box-shadow: 0 10px 50px -10px rgba(0, 255, 255, 0.3),
+      0 0 30px rgba(0, 255, 255, 0.1) inset;
+    border-color: rgba(0, 255, 240, 0.6);
+  }
+  50% {
+    box-shadow: 0 10px 60px -5px rgba(0, 255, 255, 0.5),
+      0 0 50px rgba(0, 255, 255, 0.2) inset;
+    border-color: rgba(150, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: 0 10px 50px -10px rgba(0, 255, 255, 0.3),
+      0 0 30px rgba(0, 255, 255, 0.1) inset;
+    border-color: rgba(0, 255, 240, 0.6);
+  }
+}

@@ -35,6 +35,7 @@ export default function Page() {
       {
         message: "I don't think you understand but can't be helped...",
         duration: 3500,
+        type: "discovery",
       },
     ];
 

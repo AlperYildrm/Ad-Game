@@ -12,7 +12,7 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Tch!", duration: 1000 },
+      { message: "Tch!", duration: 1000, type: "angry" },
       {
         message: "I used to spent at least 3 hours to pass this level.",
         duration: 4000,
@@ -21,7 +21,7 @@ export default function Page() {
         message: "You must be so lucky that easily passed the level.",
         duration: 4000,
       },
-      { message: "You lucky platypus!", duration: 2500 },
+      { message: "You lucky platypus!", duration: 2500, type: "angry" },
       {
         message: "However... I want to see how much lucky you are.",
         duration: 3500,
@@ -30,7 +30,7 @@ export default function Page() {
         message: "Because you need to be lucky enough for next level.",
         duration: 4000,
       },
-      { message: "Huh? What is this??", duration: 2000 },
+      { message: "Huh? What is this??", duration: 2000, type: "discovery" },
       {
         message: "waaaaaaa. I just saw a cat entering utility room.",
         duration: 4000,

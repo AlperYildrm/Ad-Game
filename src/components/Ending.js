@@ -42,16 +42,29 @@ function Ending() {
 
   useEffect(() => {
     const messages = [
-      { message: "REALLY!?", duration: 1000 },
-      { message: "YOU HAVE ONLY ONE THING TO DO AND", duration: 2000 },
-      { message: "HOW CAN YOU STILL...", duration: 2000 },
+      { message: "REALLY!?", duration: 1000, type: "angry" },
+      {
+        message: "YOU HAVE ONLY ONE THING TO DO AND",
+        duration: 2000,
+        type: "angry",
+      },
+      { message: "HOW CAN YOU STILL...", duration: 2000, type: "angry" },
       {
         message: "DO YOU HAVE ANY IDEA OF WHAT YOU HAVE DONE?!",
         duration: 2500,
+        type: "angry",
       },
-      { message: "YUO SILMPY DLEEETD WOHLE STIE DTAA", duration: 3500 },
-      { message: "WLIL YYYYUO TA*EKK R3SP0*NS1/BLE F*R TH-", duration: 4000 },
-      { message: "Ğ", duration: 2000 },
+      {
+        message: "YUO SILMPY DLEEETD WOHLE STIE DTAA",
+        duration: 3500,
+        type: "angry",
+      },
+      {
+        message: "WLIL YYYYUO TA*EKK R3SP0*NS1/BLE F*R TH-",
+        duration: 4000,
+        type: "angry",
+      },
+      { message: "Ğ", duration: 2000, type: "discovery" },
       { message: "", duration: 3000 },
     ];
 

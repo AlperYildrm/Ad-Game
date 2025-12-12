@@ -12,10 +12,14 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Bruh, did you really lick it?", duration: 3000 },
+      {
+        message: "Bruh, did you really lick it?",
+        duration: 3000,
+        type: "discovery",
+      },
       { message: "I got nothing to say...", duration: 2500 },
       { message: "I respect you totally now.", duration: 3000 },
-      { message: "JUST KIDDING.", duration: 1500 },
+      { message: "JUST KIDDING.", duration: 1500, type: "angry" },
       {
         message:
           "I am only very disappointed because i couldn't take your photo",
@@ -31,7 +35,7 @@ export default function Page() {
           "I am making a Ad like a social media so that you can do doomscrollig.",
         duration: 5500,
       },
-      { message: "Here we go!", duration: 2000 },
+      { message: "Here we go!", duration: 2000, type: "happy" },
     ];
 
     showNarratorSequence(messages, 500, () => setIsSpoken(true));

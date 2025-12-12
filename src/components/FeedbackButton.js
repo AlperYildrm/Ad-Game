@@ -19,7 +19,7 @@ function FeedbackButton() {
 
   useEffect(() => {
     const messages = [
-      { message: "Ta-Daaa.", duration: 1500 },
+      { message: "Ta-Daaa.", duration: 1500, type: "happy" },
       { message: "Brand new feedback system!", duration: 2500 },
     ];
 

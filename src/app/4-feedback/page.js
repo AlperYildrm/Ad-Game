@@ -20,7 +20,7 @@ export default function Page() {
           "There is another problem that is not caused by type of my Ads. ",
         duration: 5000,
       },
-      { message: "Yes, it must be this!", duration: 2500 },
+      { message: "Yes, it must be this!", duration: 2500, type: "discovery" },
       { message: "Soooo... ", duration: 2000 },
       {
         message:

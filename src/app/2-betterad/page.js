@@ -27,7 +27,7 @@ export default function Page() {
         duration: 2500,
       },
       { message: "Where did i put it... Hmm...", duration: 3000 },
-      { message: "Ah, here it is!", duration: 2000 },
+      { message: "Ah, here it is!", duration: 2000, type: "discovery" },
     ];
 
     showNarratorSequence(messages, 500, () => setIsSpoken(true));

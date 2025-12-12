@@ -11,14 +11,14 @@ export default function Page() {
 
   useEffect(() => {
     const messages = [
-      { message: "Hmm...", duration: 1000 },
+      { message: "Hmm...", duration: 1000, type: "discovery" },
       { message: "Now, i recognize your skills and luck.", duration: 3000 },
       {
         message:
-          "I undestand that i can't defeat you by skill and luck needed levels.",
+          "I undestand that i can't defeat you by skill and luck needed Ads.",
         duration: 5000,
       },
-      { message: "Nevertheless!", duration: 1500 },
+      { message: "Nevertheless!", duration: 1500, type: "angry" },
       {
         message:
           "Every skilled and lucky people i know cares about honour things.",
@@ -29,15 +29,23 @@ export default function Page() {
         message: "If you want to close the Ad, you have to lick the device",
         duration: 5000,
       },
-      { message: "AHAHAHAHAHAHAAHAH", duration: 1500 },
+      { message: "AHAHAHAHAHAHAAHAH", duration: 1500, type: "angry" },
       { message: "What are you going to do huh!?", duration: 3000 },
       {
         message:
           "Will you lick the device and throw out your honour and selfrespect for a mere Ad?",
         duration: 5500,
       },
-      { message: "Lick it!, lick it!, lick it!", duration: 2000 },
-      { message: "I want to see you licking it!!!", duration: 3000 },
+      {
+        message: "Lick it!, lick it!, lick it!",
+        duration: 2000,
+        type: "angry",
+      },
+      {
+        message: "I want to see you licking it!!!",
+        duration: 3000,
+        type: "happy",
+      },
     ];
 
     showNarratorSequence(messages, 500, () => setIsSpoken(true));
