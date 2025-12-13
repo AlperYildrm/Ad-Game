@@ -220,16 +220,6 @@ Googel Adsense Team`,
           }}
         >
           <Search sx={{ color: "white", mr: 1, fontSize: 20 }} />
-          <InputBase
-            sx={{
-              ml: 0.5,
-              flex: 1,
-              color: "white",
-              fontSize: "0.9rem",
-              "::placeholder": { color: "rgba(255,255,255,0.7)" },
-            }}
-            placeholder="Search"
-          />
         </Paper>
 
         <Box sx={{ flex: 1 }} />

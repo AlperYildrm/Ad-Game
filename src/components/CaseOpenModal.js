@@ -3,30 +3,26 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Modal } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { useSound } from "../context/SoundContext";
 
-const spinSoundUrl = "/sounds/spin.mp3"; // roulette sound
-const winSoundUrl = "/sounds/success.mp3"; // Ow yeah sound
+const spinSoundUrl = "spin"; // roulette sound
+const winSoundUrl = "success"; // Ow yeah sound
 
 function CaseWinModal({ winningItem, handleCloseWinModal }) {
+  const { playSound } = useSound();
   const winAudioRef = useRef(null);
   const router = useRouter();
 
   useEffect(() => {
-    winAudioRef.current = new Audio(winSoundUrl);
-
     // Playin the audio
-    const playPromise = winAudioRef.current.play();
-    if (playPromise !== undefined) {
-      playPromise.catch((e) => {
-        if (e.name !== "AbortError") {
-          console.error("Win audio play failed:", e);
-        }
-      });
+    const audio = playSound(winSoundUrl);
+    if (audio) {
+      winAudioRef.current = audio;
     }
 
     return () => {
-      if (winAudioRef.current && !winAudioRef.current.paused) {
-        winAudioRef.current.pause();
+      if (winAudioRef.current) {
+        winAudioRef.current.pause(); // Just pause, don't set to null immediately if we were to re-use, but here it's fine
         winAudioRef.current = null;
       }
     };
@@ -145,6 +141,7 @@ function LootItem({ item }) {
 
 //Modal for opening case
 export default function CaseOpenModal({ caseData, handleCloseCase, balance }) {
+  const { playSound } = useSound();
   const [isSpinning, setIsSpinning] = useState(false);
   const [winner, setWinner] = useState(null);
   const [reelItems, setReelItems] = useState([]);
@@ -166,18 +163,15 @@ export default function CaseOpenModal({ caseData, handleCloseCase, balance }) {
   const [reelOffset, setReelOffset] = useState(0);
   const reelContainerRef = useRef(null);
 
-  // Audio part
+  // Clean up spin audio on unmount
   useEffect(() => {
-    spinAudioRef.current = new Audio(spinSoundUrl);
-    spinAudioRef.current.loop = false; // Make the sound loop
-
     return () => {
-      if (spinAudioRef.current && !spinAudioRef.current.paused) {
+      if (spinAudioRef.current) {
         spinAudioRef.current.pause();
         spinAudioRef.current = null;
       }
     };
-  }, []); // Empty array = runs once on mount
+  }, []);
 
   useEffect(() => {
     // Set initial offset on mount
@@ -219,20 +213,12 @@ export default function CaseOpenModal({ caseData, handleCloseCase, balance }) {
     setTranslateX(0); // Start from the beginning
 
     // Play the sound
-    if (spinAudioRef.current) {
-      spinAudioRef.current.currentTime = 0; // Rewind to start
-      const playPromise = spinAudioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          // Ignore the AbortError which is the interruption warning
-          if (error.name !== "AbortError") {
-            console.error("Audio play failed:", error);
-          }
-        });
-      }
+    const audio = playSound(spinSoundUrl);
+    if (audio) {
+      spinAudioRef.current = audio;
     }
 
-    // Decision of result before animating it
+    // Decision of the result before animating it
     const winningItem = getWinner(caseData.loots);
 
     // Generate spinning items
@@ -244,7 +230,7 @@ export default function CaseOpenModal({ caseData, handleCloseCase, balance }) {
     );
     setReelItems(items);
 
-    // Start the animation (CSS transition will handle it) and also did this part gemini
+    // Start the animation (CSS transition will handle it)
     setTimeout(() => {
       // Add a small random jitter so it doesn't stop at the *exact* same pixel
       const jitter = (Math.random() - 0.5) * (TOTAL_ITEM_WIDTH * 0.4);
@@ -256,7 +242,7 @@ export default function CaseOpenModal({ caseData, handleCloseCase, balance }) {
       setIsSpinning(false);
       setWinner(winningItem);
 
-      if (spinAudioRef.current && !spinAudioRef.current.paused) {
+      if (spinAudioRef.current) {
         spinAudioRef.current.pause();
       }
 
@@ -273,7 +259,7 @@ export default function CaseOpenModal({ caseData, handleCloseCase, balance }) {
   const closeAndReset = () => {
     reset();
 
-    if (spinAudioRef.current && !spinAudioRef.current.paused) {
+    if (spinAudioRef.current) {
       spinAudioRef.current.pause();
     }
 

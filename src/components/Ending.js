@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNarrator } from "@/context/NarratorContext";
 import { Paper, Box, Typography, GlobalStyles } from "@mui/material";
 import { keyframes } from "@emotion/react";
+import { useSound } from "@/context/SoundContext";
 
 const shake = keyframes`
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -37,8 +38,23 @@ function Ending() {
   const [chaosLevel, setChaosLevel] = useState(0);
   const [deletedFiles, setDeletedFiles] = useState([]);
   const [isDead, setIsDead] = useState(false);
-
+  const { playSound } = useSound();
   const corruptionInterval = useRef(null);
+
+  useEffect(() => {
+    if (isDead) {
+      playSound("deadscreensound");
+      return;
+    }
+
+    if (chaosLevel === 1) {
+      playSound("alarm");
+    }
+
+    if (chaosLevel === 0) {
+      playSound("glitchsound");
+    }
+  }, [chaosLevel, isDead, playSound]);
 
   useEffect(() => {
     const messages = [
@@ -56,15 +72,15 @@ function Ending() {
       },
       {
         message: "YUO SILMPY DLEEETD WOHLE STIE DTAA",
-        duration: 3500,
+        duration: 2500,
         type: "angry",
       },
       {
         message: "WLIL YYYYUO TA*EKK R3SP0*NS1/BLE F*R TH-",
-        duration: 4000,
+        duration: 2150,
         type: "angry",
       },
-      { message: "Ğ", duration: 2000, type: "discovery" },
+      { message: "Ğ", duration: 3500 },
       { message: "", duration: 3000 },
     ];
 

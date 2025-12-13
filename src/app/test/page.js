@@ -1,22 +1,23 @@
 "use client";
 import React from "react";
-import DownloadSettingsModal2 from "@/components/DownloadSettingsModal2";
-
-import { useSound } from "@/context/SoundContext";
-import { Button, Box } from "@mui/material";
+import HardestGame from "@/components/HardestGame";
+import { Box, Button } from "@mui/material";
+import { useState } from "react";
+import Ending from "@/components/Ending";
+import WindowAd from "@/ads/WindowAd";
 
 function page() {
-  const { playSound } = useSound();
+  const [open, setOpen] = useState(false);
 
   return (
     <Box>
-      <Button
-        variant="contained"
-        onClick={() => playSound("spin")}
-        sx={{ m: 2 }}
-      >
-        Test Sound (Spin)
-      </Button>
+      {open ? (
+        <Box>
+          <Ending />
+        </Box>
+      ) : (
+        <Button onClick={() => setOpen(!open)}>Open Stopify</Button>
+      )}
     </Box>
   );
 }

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Box, Paper, Typography, IconButton, InputBase } from "@mui/material";
+import {
+  Box,
+  Paper,
+  Typography,
+  IconButton,
+  InputBase,
+  TextField,
+} from "@mui/material";
 import {
   ArrowBack,
   ArrowForward,
@@ -112,12 +119,21 @@ function BrowserApp() {
           }}
         >
           <Lock sx={{ fontSize: 12, color: "#aaa", mr: 1 }} />
-          <InputBase
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            sx={{ flex: 1, color: "white", fontSize: "0.8rem", pb: 0.2 }}
+
+          {/* Added flexGrow: 1 here to push the star to the right */}
+          <Typography variant="caption" sx={{ flexGrow: 1 }}>
+            {url}
+          </Typography>
+
+          <StarBorder
+            sx={{
+              fontSize: 16,
+              color: "#aaa",
+              cursor: "pointer",
+
+              ml: 1,
+            }}
           />
-          <StarBorder sx={{ fontSize: 16, color: "#aaa", cursor: "pointer" }} />
         </Paper>
 
         <Typography

@@ -4,10 +4,20 @@ import React, { useEffect, useRef, useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
+import { useSound } from "@/context/SoundContext";
 
 function HardestGame() {
+  const { playSound } = useSound();
+
+  const handleMusic = (sound) => playSound(sound);
   const canvasRef = useRef(null);
   const [isInsideGoal, setIsInsideGoal] = useState(false);
+
+  useEffect(() => {
+    if (isInsideGoal) {
+      playSound("completedsound");
+    }
+  }, [isInsideGoal, playSound]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -18,24 +28,19 @@ function HardestGame() {
     canvas.width = W;
     canvas.height = H;
 
-    // Oyun alanı (beyaz dikdörtgen)
     const border = { x: 80, y: 40, w: W - 160, h: H - 80 };
 
-    // Başlangıç ve bitiş bölgeleri
     const startZone = { x: 0, y: 80, w: 80, h: 140 };
     const goalZone = { x: W - 80, y: 80, w: 80, h: 140 };
 
-    // Sarı daire (hedef)
     const goalCircle = {
       x: goalZone.x + goalZone.w / 2,
       y: goalZone.y + goalZone.h / 2,
       r: 20,
     };
 
-    // Oyuncu
     const player = { x: startZone.x + 40, y: H / 2, size: 24 };
 
-    // Mavi toplar (sayısı artırıldı)
     const enemies = [];
     const cols = 12;
     const spacingX = border.w / (cols + 1);
@@ -125,6 +130,7 @@ function HardestGame() {
 
       // Check border collision
       if (isPlayerTouchingBorder()) {
+        handleMusic("bruh");
         resetPlayer();
       }
     }

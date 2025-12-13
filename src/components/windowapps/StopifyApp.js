@@ -33,28 +33,103 @@ import {
   DownloadForOffline,
 } from "@mui/icons-material";
 
+import { useSound } from "../../context/SoundContext";
+
 const StopifyApp = () => {
+  const { playSound } = useSound();
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(70);
-  const [progress, setProgress] = useState(30);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
-  //masterpiece song
-  const audioRef = useRef(new Audio("/sounds/sscb.mp3"));
+  const activeAudioRef = useRef(null);
+
+  const defaultSongPath = "sscb";
+
+  useEffect(() => {
+    return () => {
+      if (activeAudioRef.current) {
+        activeAudioRef.current.pause();
+        activeAudioRef.current = null;
+      }
+    };
+  }, []);
+
+  const handleTimeUpdate = () => {
+    if (activeAudioRef.current) {
+      setCurrentTime(activeAudioRef.current.currentTime);
+      setDuration(activeAudioRef.current.duration || 0);
+      const prog =
+        (activeAudioRef.current.currentTime / activeAudioRef.current.duration) *
+        100;
+      setProgress(prog || 0);
+    }
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+    setProgress(0);
+    setCurrentTime(0);
+  };
+
+  const playTrack = (path) => {
+    let cleanPath = path;
+    if (cleanPath.includes("/sounds/")) {
+      cleanPath = cleanPath.split("/sounds/")[1];
+    }
+    if (cleanPath.endsWith(".mp3")) {
+      cleanPath = cleanPath.replace(".mp3", "");
+    }
+
+    const audio = playSound(cleanPath, { volume: volume / 100 });
+    if (audio) {
+      activeAudioRef.current = audio;
+
+      audio.addEventListener("timeupdate", handleTimeUpdate);
+      audio.addEventListener("ended", handleEnded);
+      audio.addEventListener("pause", () => setIsPlaying(false));
+      audio.addEventListener("play", () => setIsPlaying(true));
+
+      setIsPlaying(true);
+    }
+  };
 
   const togglePlay = () => {
+    // If no audio is loaded yet, play the default
+    if (!activeAudioRef.current) {
+      playTrack(defaultSongPath);
+      return;
+    }
+
     if (isPlaying) {
-      audioRef.current.pause();
+      activeAudioRef.current.pause();
     } else {
-      audioRef.current.play();
+      activeAudioRef.current.play();
     }
     setIsPlaying(!isPlaying);
   };
 
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume / 100;
+    if (activeAudioRef.current) {
+      activeAudioRef.current.volume = volume / 100;
     }
   }, [volume]);
+
+  const handleSeek = (e, newValue) => {
+    if (activeAudioRef.current && activeAudioRef.current.duration) {
+      const newTime = (newValue / 100) * activeAudioRef.current.duration;
+      activeAudioRef.current.currentTime = newTime;
+      setProgress(newValue);
+    }
+  };
+
+  const formatTime = (time) => {
+    if (!time) return "0:00";
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
 
   const colors = {
     bg: "#121212",
@@ -88,7 +163,7 @@ const StopifyApp = () => {
     },
     {
       id: 2,
-      title: "Shape on You",
+      title: "Shame on You",
       artist: "Ad Sheer",
       album: "Division",
       duration: "3:53",
@@ -476,6 +551,7 @@ const StopifyApp = () => {
             {songs.map((song, index) => (
               <Box
                 key={song.id}
+                onClick={() => playTrack(song.url || defaultSongPath)}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -646,12 +722,12 @@ const StopifyApp = () => {
             }}
           >
             <Typography variant="caption" sx={{ color: colors.textSec }}>
-              1:20
+              {formatTime(currentTime)}
             </Typography>
             <Slider
               size="small"
               value={progress}
-              onChange={(e, v) => setProgress(v)}
+              onChange={handleSeek}
               sx={{
                 color: "white",
                 height: 4,
@@ -665,7 +741,7 @@ const StopifyApp = () => {
               }}
             />
             <Typography variant="caption" sx={{ color: colors.textSec }}>
-              3:20
+              {formatTime(duration)}
             </Typography>
           </Box>
         </Box>

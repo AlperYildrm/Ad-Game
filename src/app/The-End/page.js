@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { useSound } from "@/context/SoundContext";
 import {
   Box,
   Typography,
@@ -153,17 +154,22 @@ const EndMenu = ({ onReplay }) => {
   );
 };
 
-const CreditScene = ({ onComplete }) => {
+const CreditScene = ({ onComplete, handleMusic }) => {
   const scrollRef = useRef(null);
   const [isSpeedingUp, setIsSpeedingUp] = useState(false);
-
+  useEffect(() => {
+    handleMusic();
+  }, []);
   const credits = [
     { role: "Developer", names: ["Alper YILDIRIM"] },
     { role: "Idea Owner", names: ["Alper YILDIRIM"] },
     { role: "Story & Narrative", names: ["Alper YILDIRIM", "The Narrator"] },
     { role: "Ad's Source", names: ["Alper YILDIRIM, Sora"] },
     { role: "3D Modelling", names: ["Was there any 3D model??"] },
-    { role: "Sounds & Music", names: ["Alper YILDIRIM", "Audocity"] },
+    {
+      role: "Sounds & Music",
+      names: ["Alper YILDIRIM", "Audocity, Pixabay, Youtube"],
+    },
     {
       role: "Voice Acting",
       names: ["Alper YILDIRIM", "The Narrator"],
@@ -376,8 +382,9 @@ const CreditScene = ({ onComplete }) => {
 };
 
 export default function Page() {
+  const { playSound } = useSound();
   const [gameState, setGameState] = useState("credits");
-
+  const handleMusic = () => playSound("credit");
   const handleCreditsComplete = () => setGameState("menu");
   const handleReplay = () => setGameState("credits");
 
@@ -385,7 +392,10 @@ export default function Page() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       {gameState === "credits" && (
-        <CreditScene onComplete={handleCreditsComplete} />
+        <CreditScene
+          onComplete={handleCreditsComplete}
+          handleMusic={handleMusic}
+        />
       )}
       {gameState === "menu" && <EndMenu onReplay={handleReplay} />}
     </ThemeProvider>

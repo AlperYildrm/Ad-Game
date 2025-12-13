@@ -22,7 +22,7 @@ function WindowAd() {
     >
       <Image
         src={Windowad}
-        alt="Fine Armors"
+        alt="Window"
         width={600}
         height={375}
         style={{ borderRadius: "8px" }}

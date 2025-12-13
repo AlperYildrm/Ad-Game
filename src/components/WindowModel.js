@@ -218,8 +218,11 @@ function WindowModel() {
             overflow: "hidden",
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
             mx: "auto",
-            my: 2,
-            position: "relative",
+            position: "fixed",
+            bottom: "10px",
+            left: 0,
+            right: 0,
+            zIndex: 1200,
             color: "text.primary",
           }}
         >

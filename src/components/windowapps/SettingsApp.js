@@ -167,10 +167,6 @@ function SettingsApp() {
           }}
         >
           <Search sx={{ color: colors.textSec, mr: 1, fontSize: 20 }} />
-          <InputBase
-            sx={{ ml: 0.5, flex: 1, color: "white", fontSize: "0.9rem" }}
-            placeholder="Find a setting"
-          />
         </Paper>
 
         <Box sx={{ flex: 1, overflowY: "auto", mx: -1, px: 1 }}>
