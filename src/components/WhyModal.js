@@ -5,7 +5,7 @@ function WhyModal() {
   return (
     <Paper elevation={3} sx={{ padding: 4, textAlign: "center", width: 450 }}>
       <Typography variant="h6" gutterBottom>
-        Because it's Nutzilla!
+        {`Because it's Nutzilla!`}
       </Typography>
       <Typography variant="body1">
         {`Just because it is on the Ad does not mean the product is hyped or scam!
