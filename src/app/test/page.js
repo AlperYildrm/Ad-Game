@@ -6,7 +6,7 @@ import { useState } from "react";
 import Ending from "@/components/Ending";
 import WindowAd from "@/ads/WindowAd";
 
-function page() {
+function Page() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -22,4 +22,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

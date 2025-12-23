@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { useSound } from "@/context/SoundContext";
 import {
   Box,
@@ -100,7 +101,7 @@ const EndMenu = ({ onReplay }) => {
             variant="body1"
             sx={{ color: "grey.500", fontStyle: "italic", fontSize: "1.2rem" }}
           >
-            "That's it, no more ads. The End..."
+            {`"That's it, no more ads. The End..."`}
           </Typography>
 
           <Stack spacing={2} width="100%" sx={{ pt: 4 }}>
@@ -350,17 +351,20 @@ const CreditScene = ({ onComplete, handleMusic }) => {
           </Typography>
           <Stack direction="row" spacing={3}>
             <IconButton sx={{ color: "white" }}>
-              <a href="https://github.com/AlperYildrm/Ad-Game" target="_blank">
+              <Link
+                href="https://github.com/AlperYildrm/Ad-Game"
+                target="_blank"
+              >
                 <Github />
-              </a>
+              </Link>
             </IconButton>
             <IconButton sx={{ color: "#29b6f6" }}>
-              <a
+              <Link
                 href="https://www.youtube.com/watch?v=qthxa7m_B4E"
                 target="_blank"
               >
                 <Twitter />
-              </a>
+              </Link>
             </IconButton>
           </Stack>
         </Stack>

@@ -6,6 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import { useState } from "react";
 import LastFeedbackModal from "./LastFeedbackModal";
+import Link from "next/link";
 
 function FinalWordsModal() {
   const [open, setOpen] = useState(false);
@@ -61,11 +62,11 @@ function FinalWordsModal() {
         </ListItem>
         <Divider component="li" />
         <ListItem sx={{ alignItems: "center", justifyContent: "center" }}>
-          <a href="/">
+          <Link href="/">
             <Button variant="contained" color="success" sx={{ m: 1 }}>
               Play Again?
             </Button>
-          </a>
+          </Link>
         </ListItem>
       </List>
       <Modal

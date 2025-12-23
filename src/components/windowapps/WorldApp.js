@@ -327,11 +327,11 @@ function WorldApp() {
               lineHeight: 1.5,
             }}
           >
-            Most sites that aim to give users a product or service start with
+            {`Most sites that aim to give users a product or service start with
             any or less ads. This make the site gain popularity and users trust.
             Every user thinks that this site is more convinient than other sites
             which are old enough to go through the "ad logic". This case make
-            the site get higher user traffic and create core users.
+            the site get higher user traffic and create core users.`}
           </Typography>
           <br />
           <Typography
@@ -342,7 +342,7 @@ function WorldApp() {
               lineHeight: 1.5,
             }}
           >
-            The site does not struggling anymore. Nevertheless, a problem comes
+            {`The site does not struggling anymore. Nevertheless, a problem comes
             out: The sites growing slowed or stopped. For the solution, the
             sites decides bringing new features like user profiles, comments,
             new luxury ui etc... But all of these features means more expenses.
@@ -352,7 +352,7 @@ function WorldApp() {
             increased users is not enough to cover the increased expenses. This
             stem from the fact that the number of user interesting what the site
             serves is limited. Just because the site spend two times more money,
-            does not mean that the number of users will also increase two times.
+            does not mean that the number of users will also increase two times.`}
           </Typography>
           <Typography
             variant="h6"
@@ -373,13 +373,13 @@ function WorldApp() {
               lineHeight: 1.5,
             }}
           >
-            If we look at the result, we can easily predict what the sites next
-            move will be. Of course, it is to add ads! Increase ads, put a time
-            limit to ads, increase the length of ads, make adds unskippable,
-            more pop-up ads, when user enter a site open a new tab with ads,
-            when user click something open a new tab with ads and so on. For the
-            final, put an anti-adblocker system to prevent users from using
-            adblockers.
+            {`If we look at the result, we can easily predict what the sites next
+              move will be. Of course, it is to add ads! Increase ads, put a time
+              limit to ads, increase the length of ads, make adds unskippable,
+              more pop-up ads, when user enter a site open a new tab with ads,
+              when user click something open a new tab with ads and so on. For the
+              final, put an anti-adblocker system to prevent users from using
+              adblockers.`}
           </Typography>
           <br />
           <Typography
@@ -390,12 +390,12 @@ function WorldApp() {
               lineHeight: 1.5,
             }}
           >
-            This is the the harsh truth of the internet world. So in the end,
+            {`This is the the harsh truth of the internet world. So in the end,
             who is the winner? Unfortunately, it is never the users. When the
             users that fed up with ads tells their problem regarding ads to the
             site, they get banned or muted immidately. This situation continues
             until a new site comes out, users go to new site and the cycle
-            repeats.
+            repeats.`}
           </Typography>
         </Paper>
       </Box>

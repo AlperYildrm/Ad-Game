@@ -44,7 +44,7 @@ function DeleteModal({ handleClose }) {
           </Typography>
 
           <Typography variant="body2" sx={{ color: "#ccc", mb: 3 }}>
-            This will delete "window.ad" from the site.
+            {`This will delete "window.ad" from the site.`}
           </Typography>
 
           <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 1 }}>

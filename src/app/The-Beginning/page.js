@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Paper, Box } from "@mui/material";
 import MainMenu from "@/components/MainMenu";
 
-function page() {
+function Page() {
   const { showNarratorSequence } = useNarrator();
   const [isSpoken, setIsSpoken] = useState(false);
 
@@ -51,4 +51,4 @@ function page() {
   ) : null;
 }
 
-export default page;
+export default Page;

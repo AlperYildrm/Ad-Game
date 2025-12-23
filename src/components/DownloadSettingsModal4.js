@@ -285,8 +285,8 @@ function DownloadSettingsModal4({ handleResetting }) {
     <Box sx={{ animation: "fadeIn 0.3s ease" }}>
       <Box sx={{ mb: 2 }}>
         <Typography variant="body2" sx={{ color: colors.textSec, mb: 2 }}>
-          If you're having problems with your PC or want to reset it, these
-          recovery options might help.
+          {`If you're having problems with your PC or want to reset it, these
+          recovery options might help.`}
         </Typography>
       </Box>
 
