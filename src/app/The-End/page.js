@@ -127,7 +127,7 @@ const EndMenu = ({ onReplay }) => {
               size="large"
               sx={{ borderColor: "rgba(255,255,255,0.3)" }}
             >
-              Dev's Final Words
+              {`Dev's Final Words`}
             </Button>
           </Stack>
 
