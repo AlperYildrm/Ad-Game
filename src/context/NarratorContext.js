@@ -95,9 +95,9 @@ export const NarratorProvider = ({ children }) => {
     [stopNarrator, durationScale]
   );
 
-  useEffect(() => {
+  /* useEffect(() => {
     stopNarrator();
-  }, [pathname, stopNarrator]);
+  }, [pathname, stopNarrator]); */
 
   return (
     <NarratorContext.Provider
