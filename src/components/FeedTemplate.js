@@ -38,7 +38,7 @@ function FeedTemplate() {
         {
           id: 3,
           name: "Clara",
-          text: "I commented on this Ad before Emma did.",
+          text: "I commented on this Ad after Emma did.",
           date: "2w",
         },
         {
