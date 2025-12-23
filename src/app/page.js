@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import MainMenu from "../components/MainMenu";
 import { Box } from "@mui/material";

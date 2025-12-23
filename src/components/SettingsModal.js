@@ -1,5 +1,7 @@
 "use client";
 
+import "@/i18n";
+
 import {
   Box,
   Button,
@@ -27,7 +29,11 @@ function SettingsModal() {
   const { durationScale, setDurationScale } = useNarrator();
 
   const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
+    if (i18n && i18n.changeLanguage) {
+      i18n.changeLanguage(lang);
+    } else {
+      console.error("i18n henüz yüklenmedi");
+    }
   };
 
   const handleSpeedChange = (event, newValue) => {
@@ -37,7 +43,7 @@ function SettingsModal() {
       { message: "Hi, i am your beloved narrator!", duration: 2000 },
       newValue > 1.3
         ? {
-            message: "Are you sirious? Are you a turtle reader or what?",
+            message: "Are you serious? Are you a turtle reader or what?",
             duration: 3000,
           }
         : newValue < 0.8
@@ -52,6 +58,8 @@ function SettingsModal() {
     showNarratorSequence(messages);
   };
 
+  const currentLang = i18n?.language || "en";
+
   return (
     <Paper elevation={3} sx={{ padding: 4, textAlign: "center", width: 300 }}>
       <Box sx={{ mb: 3 }}>
@@ -62,13 +70,13 @@ function SettingsModal() {
         >
           <Button
             onClick={() => changeLanguage("en")}
-            variant={i18n.language === "en" ? "contained" : "outlined"}
+            variant={currentLang === "en" ? "contained" : "outlined"}
           >
             EN
           </Button>
           <Button
             onClick={() => changeLanguage("tr")}
-            variant={i18n.language === "tr" ? "contained" : "outlined"}
+            variant={currentLang === "tr" ? "contained" : "outlined"}
           >
             TR
           </Button>
