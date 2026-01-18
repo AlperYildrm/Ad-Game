@@ -34,8 +34,14 @@ export const SoundProvider = ({ children }) => {
     }
   }, []);
 
+  const [isMusicEnabled, setIsMusicEnabled] = React.useState(true);
+
+  const toggleMusic = useCallback(() => {
+    setIsMusicEnabled((prev) => !prev);
+  }, []);
+
   return (
-    <SoundContext.Provider value={{ playSound }}>
+    <SoundContext.Provider value={{ playSound, isMusicEnabled, toggleMusic }}>
       {children}
     </SoundContext.Provider>
   );

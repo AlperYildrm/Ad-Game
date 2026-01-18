@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import { Box } from "@mui/system";
 import { useNarrator } from "@/context/NarratorContext";
 import CryptoAd from "@/ads/CryptoAd";
+import { useSound } from "@/context/SoundContext";
 
 export default function Page() {
   const { showNarratorSequence } = useNarrator();
   const [isSpoken, setIsSpoken] = useState(false);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const { playSound } = useSound();
 
   useEffect(() => {
     const messages = [
@@ -38,7 +40,9 @@ export default function Page() {
       { message: "It may cause blackout, i don't know...", duration: 4000 },
     ];
 
-    showNarratorSequence(messages, 500, () => setIsSpoken(true));
+    showNarratorSequence(messages, 500, () => {
+      setIsSpoken(true);
+    });
   }, []);
 
   useEffect(() => {
@@ -48,6 +52,12 @@ export default function Page() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  useEffect(() => {
+    if (isSpoken) {
+      playSound("poweroff");
+    }
+  }, [isSpoken]);
 
   return isSpoken ? (
     <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>

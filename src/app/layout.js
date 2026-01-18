@@ -3,6 +3,8 @@ import "./globals.css";
 import { NarratorProvider } from "../context/NarratorContext";
 import { SoundProvider } from "../context/SoundContext";
 import Narrator from "../components/Narrator";
+import BackgroundMusic from "../components/BackgroundMusic";
+import HintButton from "../components/HintButton";
 import "../i18n";
 
 const geistSans = Geist({
@@ -31,6 +33,8 @@ export default function RootLayout({ children }) {
           <NarratorProvider>
             {children}
             <Narrator />
+            <BackgroundMusic />
+            <HintButton />
           </NarratorProvider>
         </SoundProvider>
       </body>

@@ -5,11 +5,14 @@ import CheckIcon from "@mui/icons-material/Check";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { useSound } from "@/context/SoundContext";
+
 function Captcha() {
   const [loading, setLoading] = useState(false);
   const [verified, setVerified] = useState(false);
   const [hover, setHover] = useState(false);
   const router = useRouter();
+  const { playSound } = useSound();
 
   const handleClick = () => {
     if (verified || loading) return;
@@ -22,6 +25,7 @@ function Captcha() {
 
   const handleRedirect = () => {
     if (verified) {
+      playSound("brokenglass");
       router.push("/6-look-down");
     }
   };

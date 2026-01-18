@@ -2,6 +2,7 @@
   "settings": {
     "title": "Ayarlar",
     "speed_label": "Anlatıcının Repliklerinin Süresi",
+    "background_music": "Arka Plan Müziği",
     "fast": "Hızlı",
     "slow": "Yavaş",
     "more_settings": "Daha Fazla Ayar"
@@ -9,5 +10,23 @@
   "settingssettings": {
     "header": "Başka nasıl bir ayar bekliyordun ki?",
     "paragraph": "Burası dümdüz site reklamlarıyla alakalı bir oyun. Bir de istersen şuraya birkaç düğme koyayım, oynarsın? Anlatıcı hızını değiştiren ayar koydum çünkü sitenin testçisi anlatıcıyı dinlerken koltukta az daha uyuyordu. Dil seçim ayarından bahsedecek olursak, ekledim ama bir sor niye ekledim? Çünkü ekleyebiliyorum. Fakat bunu tüm siteye eklemek başka bir mevzu. Uğraşamam vallahi. İşte bu kadar, haydi sana iyi eğlenceler!"
+  },
+  "hints": {
+    "1-thankyou": "Yanlışlıkla tıkladığını varsayıyorum.",
+    "2-betterad": "Belki de... Sandığımdan da aptalsındır?",
+    "3-why": "Neden gerçekten. Belki de sadece devam etmelisin?",
+    "4-feedback": "Fikirlerin önemli ama sana göre. Dürüst ol biraz.",
+    "5-timeout": "Süre dolana kadar sabredemedin mi? Cidden mi?",
+    "6-look-down": "URL de güzelmiş ha...",
+    "7-war-declaration": "Yav bu Ads by Googel yazısı da ne alaka?",
+    "8-let-it-slide": "Sen reklamı, reklam beni, ben de san- öhm öhm seni kaydıracağım.",
+    "9-game": "Yeteneğin yoksa ben napayım. Ben sadece bir ipucuyum.",
+    "10-blackout": "Işık hüzmesinden düğmeleri ara.",
+    "11-LICK-IT": "Bi yarım dakika yala şunu hele. Belki bir şeyler olur...",
+    "12-feed": "Vallahi körsün. Logout kısmına iyice bak. Gözlüklerini de tak.",
+    "13-gambling": "Almanya'dan dayıoğlu aradı. Beleş kumara bas! Beleş kumar...",
+    "14-cmd": "Reklamın ortasına tıkla ve sonra reklamı sil.",
+    "15-enough": "...",
+    "default": "Evet ben ipucuyum. Sıkıştığında bana tıkla."
   }
 }

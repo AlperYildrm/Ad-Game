@@ -5,6 +5,7 @@ import { Box, Modal } from "@mui/material";
 import LickIt from "../../public/images/lickit.png";
 import Link from "next/link";
 import Image from "next/image";
+import { useSound } from "@/context/SoundContext";
 import InformationButton from "@/components/InformationButton";
 import LickConfirmModal from "@/components/LickConfirmModal";
 
@@ -12,9 +13,11 @@ function LickitAd() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { playSound } = useSound();
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      playSound("lick");
       handleOpen();
     }, 15000);
     return () => clearTimeout(timer);

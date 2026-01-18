@@ -16,6 +16,7 @@ import React, { useState } from "react";
 import SettingsSettings from "./SettingsSettings";
 import { Modal } from "@mui/material";
 import { useNarrator } from "@/context/NarratorContext";
+import { useSound } from "@/context/SoundContext";
 import { useTranslation } from "react-i18next";
 
 function SettingsModal() {
@@ -23,6 +24,7 @@ function SettingsModal() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { showNarratorSequence } = useNarrator();
+  const { isMusicEnabled, toggleMusic } = useSound();
 
   const { t, i18n } = useTranslation();
 
@@ -47,12 +49,12 @@ function SettingsModal() {
             duration: 3000,
           }
         : newValue < 0.8
-        ? {
-            message:
-              "Really you are okay with going this fast? I bet you won't even listen me.",
-            duration: 3000,
-          }
-        : { message: "Yes, you are ready to go!", duration: 2000 },
+          ? {
+              message:
+                "Really you are okay with going this fast? I bet you won't even listen me.",
+              duration: 3000,
+            }
+          : { message: "Yes, you are ready to go!", duration: 2000 },
     ];
 
     showNarratorSequence(messages);
@@ -97,6 +99,23 @@ function SettingsModal() {
       <br />
 
       <Box sx={{ mb: 2 }}>
+        <Stack
+          direction="row"
+          spacing={1}
+          alignItems="center"
+          justifyContent="center"
+          sx={{ mb: 2 }}
+        >
+          <Typography variant="body2">
+            {t("settings.background_music", "Background Music")}
+          </Typography>
+          <Switch
+            checked={isMusicEnabled}
+            onChange={toggleMusic}
+            inputProps={{ "aria-label": "background music toggle" }}
+          />
+        </Stack>
+
         <Typography id="narrator-speed-slider" gutterBottom variant="caption">
           {t("settings.speed_label")} ({durationScale}x)
         </Typography>

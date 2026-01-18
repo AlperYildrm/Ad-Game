@@ -40,8 +40,8 @@ function NutzillaAd() {
 
           {!hover && (
             <IconButton
-              component={Link}
-              href="/7-war-declaration"
+              //component={Link}
+              //href="/7-war-declaration"
               sx={{
                 position: "absolute",
                 top: 8,

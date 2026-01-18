@@ -2,6 +2,7 @@
   "settings": {
     "title": "Settings",
     "speed_label": "Narrator's Line Duration",
+    "background_music": "Background Music",
     "fast": "Fast",
     "slow": "Slow",
     "more_settings": "More Settings"
@@ -9,5 +10,23 @@
   "settingssettings": {
     "header": "What kind of settings did you expect?",
     "paragraph": "It is literally just a game about ads. What else do you want, a settings empire?I added the narrator speed slider because our site tester was aging rapidly while waiting for the lines tofinish. Then I threw in a language selector because i simply can. But making these settings apply to the whole site? Yeah, no. I am way too lazy for that.So that's all you get. Enjoy!"
+  },
+  "hints": {
+    "1-thankyou": "I suppose you click by mistake. Anyway...",
+    "2-betterad": "I mean... Maybe you are dumber than i expected?",
+    "3-why": "Why indeed. Maybe just move on?",
+    "4-feedback": "Your opinion matters... at all. Have you tried being honest?",
+    "5-timeout": "Patience dude patience... Patience is the only savior.",
+    "6-look-down": "Nice URL, isn't it?",
+    "7-war-declaration": "Ads by Googel.",
+    "8-let-it-slide": "As Ceaser said: I slide, you slide, the Ad slide.",
+    "9-game": "It requires skill not hint ",
+    "10-blackout": "Search for buttons under the light.",
+    "11-LICK-IT": "Go and lick it for half a minute. Maybe something will occur...",
+    "12-feed": "Are you blind? Look carefully at the logout section. You may want to put some glasses on.",
+    "13-gambling": "Free gamble slot? In this era? Here we gooo. GAMBLE!",
+    "14-cmd": "Click on the middle of the Ad and delete it.",
+    "15-enough": "...",
+    "default": "Yes this is the hint button. Click me whenever you stuck."
   }
 }
