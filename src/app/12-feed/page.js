@@ -26,7 +26,7 @@ export default function Page() {
         duration: 5000,
       },
       {
-        message: "You are no diffirent than spoiled, useless random teenager.",
+        message: "You are no different than spoiled, useless random teenager.",
         duration: 5000,
       },
       { message: "Yes... Yes that's it!", duration: 2500 },

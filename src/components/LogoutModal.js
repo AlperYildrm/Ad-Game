@@ -82,7 +82,7 @@ function LogoutModal({ HandleCloseLogout }) {
           Please enter your password to confirm logout.
         </Typography>
 
-        <Typography sx={{ fontSize: 2 }}>
+        <Typography sx={{ fontSize: 3.5 }}>
           Hint: Your password is alphabetical order of the initial letters of
           commenters name who say true in the posts. (in upcase vers.)
         </Typography>
